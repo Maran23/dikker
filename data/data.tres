@@ -1,0 +1,120 @@
+[gd_resource type="Resource" script_class="Data" load_steps=30 format=3 uid="uid://ccd5tqi2itbot"]
+
+[ext_resource type="Script" uid="uid://bp2or3y2rt5gs" path="res://data/level.gd" id="1_i3on4"]
+[ext_resource type="Script" uid="uid://ck7xbm8va0wlh" path="res://data/data.gd" id="2_h2d3w"]
+[ext_resource type="Script" uid="uid://n4jum6dwqx2j" path="res://data/artifact_item.gd" id="2_mceub"]
+[ext_resource type="Texture2D" uid="uid://bwfu1oq56x3up" path="res://assets/map/level/coin.webp" id="3_cf4fg"]
+[ext_resource type="Texture2D" uid="uid://b7wfgwx2kp4hh" path="res://assets/map/level/knife.webp" id="4_2u8ed"]
+[ext_resource type="Texture2D" uid="uid://c78prtu8oa2hl" path="res://assets/map/level/bone.webp" id="5_ido6f"]
+[ext_resource type="Texture2D" uid="uid://dqpbl8qggjqqx" path="res://assets/map/level/ammonit.webp" id="6_mt77o"]
+[ext_resource type="Texture2D" uid="uid://bd7731an8hsn3" path="res://assets/map/level/grass1.webp" id="7_spcdp"]
+[ext_resource type="Texture2D" uid="uid://bum1i5dk4n5g7" path="res://assets/map/level/grass2.webp" id="8_tc0r5"]
+[ext_resource type="Texture2D" uid="uid://eg02b2ekby2u" path="res://assets/map/level/grass3.webp" id="9_j286e"]
+[ext_resource type="Texture2D" uid="uid://ckg6hxfe1bapf" path="res://assets/map/level/grass_level.webp" id="10_8kyea"]
+[ext_resource type="Texture2D" uid="uid://jmwxcgu6yxq0" path="res://assets/map/level/flowers_top.webp" id="11_ttcv8"]
+[ext_resource type="Texture2D" uid="uid://slbkdmbns8q" path="res://assets/map/level/mask.webp" id="12_kityl"]
+[ext_resource type="Texture2D" uid="uid://hqm8wjckpafd" path="res://assets/map/level/dirt1.webp" id="13_siy3q"]
+[ext_resource type="Texture2D" uid="uid://da15dmr84248g" path="res://assets/map/level/dirt2.webp" id="14_o1wax"]
+[ext_resource type="Texture2D" uid="uid://dwlgr86vqe7hl" path="res://assets/map/level/dirt3.webp" id="15_xphq4"]
+[ext_resource type="Texture2D" uid="uid://d1d6cnl1p0tt6" path="res://assets/map/level/dirt_level.webp" id="16_wtc8a"]
+[ext_resource type="Texture2D" uid="uid://bwhcvtgeq20eg" path="res://assets/map/level/grass_top.webp" id="17_wbxeb"]
+[ext_resource type="Texture2D" uid="uid://b8tif2usxhsor" path="res://assets/map/level/stone_top.webp" id="18_r78st"]
+
+[sub_resource type="Resource" id="Resource_2uby0"]
+script = ExtResource("2_mceub")
+name = "rusty_coin"
+description = "rusty_coin_desc"
+image = ExtResource("3_cf4fg")
+price = 5
+metadata/_custom_type_script = "uid://n4jum6dwqx2j"
+
+[sub_resource type="Resource" id="Resource_u4xd7"]
+script = ExtResource("2_mceub")
+name = "second"
+description = "second"
+image = ExtResource("4_2u8ed")
+price = 10
+metadata/_custom_type_script = "uid://n4jum6dwqx2j"
+
+[sub_resource type="Resource" id="Resource_dprmq"]
+script = ExtResource("2_mceub")
+name = "third"
+description = "third"
+image = ExtResource("5_ido6f")
+price = 15
+metadata/_custom_type_script = "uid://n4jum6dwqx2j"
+
+[sub_resource type="Resource" id="Resource_drkij"]
+script = ExtResource("2_mceub")
+name = "fourth"
+description = "fourth"
+image = ExtResource("6_mt77o")
+price = 15
+metadata/_custom_type_script = "uid://n4jum6dwqx2j"
+
+[sub_resource type="Resource" id="Resource_vu40f"]
+script = ExtResource("1_i3on4")
+name = "grass"
+image = ExtResource("10_8kyea")
+block_hp = 1
+blocks = Array[Texture2D]([ExtResource("7_spcdp"), ExtResource("8_tc0r5"), ExtResource("9_j286e")])
+top_layers = Array[Texture2D]([ExtResource("11_ttcv8")])
+block_color = Color(0.415686, 0.745098, 0.188235, 1)
+block_columns = 8
+block_rows = 8
+min_artifacts = 4
+max_artifacts = 8
+artifacts = Array[ExtResource("2_mceub")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij")])
+metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
+
+[sub_resource type="Resource" id="Resource_som2p"]
+script = ExtResource("2_mceub")
+name = "knife"
+description = "knife_desc"
+image = ExtResource("4_2u8ed")
+price = 10
+metadata/_custom_type_script = "uid://n4jum6dwqx2j"
+
+[sub_resource type="Resource" id="Resource_m3hwm"]
+script = ExtResource("2_mceub")
+name = "mask"
+description = "mask_desc"
+image = ExtResource("12_kityl")
+price = 20
+metadata/_custom_type_script = "uid://n4jum6dwqx2j"
+
+[sub_resource type="Resource" id="Resource_yvmqu"]
+script = ExtResource("2_mceub")
+name = "third"
+description = ""
+image = ExtResource("3_cf4fg")
+price = 50
+metadata/_custom_type_script = "uid://n4jum6dwqx2j"
+
+[sub_resource type="Resource" id="Resource_0p71d"]
+script = ExtResource("2_mceub")
+name = "fourth"
+description = ""
+image = ExtResource("6_mt77o")
+price = 25
+metadata/_custom_type_script = "uid://n4jum6dwqx2j"
+
+[sub_resource type="Resource" id="Resource_1h35d"]
+script = ExtResource("1_i3on4")
+name = "dirt"
+image = ExtResource("16_wtc8a")
+block_hp = 2
+blocks = Array[Texture2D]([ExtResource("13_siy3q"), ExtResource("14_o1wax"), ExtResource("15_xphq4")])
+top_layers = Array[Texture2D]([ExtResource("17_wbxeb"), ExtResource("18_r78st")])
+block_color = Color(0.694118, 0.529412, 0.443137, 1)
+block_columns = 8
+block_rows = 9
+min_artifacts = 4
+max_artifacts = 10
+artifacts = Array[ExtResource("2_mceub")]([SubResource("Resource_som2p"), SubResource("Resource_m3hwm"), SubResource("Resource_yvmqu"), SubResource("Resource_0p71d")])
+metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
+
+[resource]
+script = ExtResource("2_h2d3w")
+levels = Array[ExtResource("1_i3on4")]([SubResource("Resource_vu40f"), SubResource("Resource_1h35d")])
+metadata/_custom_type_script = "uid://ck7xbm8va0wlh"

@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bger5sa13st71"]
+
+[ext_resource type="FontFile" uid="uid://smkrnuamedys" path="res://theme/futile_pro.otf" id="1_mjnei"]
+
+[resource]
+base_font = ExtResource("1_mjnei")

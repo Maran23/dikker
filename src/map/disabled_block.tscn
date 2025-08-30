@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5uc3wx23vryb"]
+
+[ext_resource type="Texture2D" uid="uid://hqm8wjckpafd" path="res://assets/map/level/dirt1.webp" id="1_thrf5"]
+
+[node name="DisabledBlock" type="Sprite2D"]
+self_modulate = Color(0.34375, 0.34375, 0.34375, 1)
+texture = ExtResource("1_thrf5")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)

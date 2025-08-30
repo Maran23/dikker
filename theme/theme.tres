@@ -1,0 +1,74 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dxmrs1ky0io2i"]
+
+[ext_resource type="FontVariation" uid="uid://bger5sa13st71" path="res://theme/font.tres" id="1_p702s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qp4sg"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.324219, 0.324219, 0.324219, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg7ad"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0.695313, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g41d3"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xda2r"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.109375, 0.109375, 0.109375, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rcub"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.078125, 0.078125, 0.078125, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xamod"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_834jt"]
+bg_color = Color(0.441406, 0.441406, 0.441406, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p702s"]
+bg_color = Color(0.516088, 0.789063, 0.468506, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[resource]
+default_font = ExtResource("1_p702s")
+default_font_size = 24
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 4
+Button/styles/disabled = SubResource("StyleBoxFlat_qp4sg")
+Button/styles/focus = SubResource("StyleBoxFlat_sg7ad")
+Button/styles/hover = SubResource("StyleBoxFlat_g41d3")
+Button/styles/normal = SubResource("StyleBoxFlat_xda2r")
+Button/styles/pressed = SubResource("StyleBoxFlat_2rcub")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 4
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_xamod")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_834jt")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_p702s")
