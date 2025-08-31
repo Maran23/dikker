@@ -1,0 +1,103 @@
+# LANGUAGE translation for Dikker for the following files:
+# res://src/ui/ingame/ingame_ui.tscn
+#
+# Automatically generated, 2025.
+msgid ""
+msgstr ""
+"Project-Id-Version: Dikker\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Artifacts
+msgid "ammonit"
+msgstr "Ammonit"
+
+msgid "ammonit_desc"
+msgstr "From a much older age"
+
+msgid "bone"
+msgstr "Bone"
+
+msgid "bone_desc"
+msgstr "I wonder from which animal this comes from"
+
+msgid "coin_rusty"
+msgstr "Rusty coin"
+
+msgid "coin_rusty_desc"
+msgstr "Rusty but still something worth"
+
+msgid "knife_fire"
+msgstr "Fire knife"
+
+msgid "knife_fire_desc"
+msgstr "A knife that has a fire pattern"
+
+msgid "mask_monkey"
+msgstr "Monkey Mask"
+
+msgid "mask_monkey_desc"
+msgstr "This masks seems to be influenced by monkeys"
+
+# Level
+msgid "grass_level"
+msgstr "Grass"
+
+msgid "dirt_level"
+msgstr "Dirt"
+
+msgid "stone_level"
+msgstr "Stone"
+
+# Ingame UI
+msgid "permanent"
+msgstr "Permanent"
+
+msgid "this_prestige"
+msgstr "This Prestige"
+
+msgid "other"
+msgstr "Other"
+
+msgid "prestige"
+msgstr "Prestige"
+
+msgid "store"
+msgstr "Store"
+
+msgid "gear"
+msgstr "Gear"
+
+msgid "collection"
+msgstr "Collection"
+
+msgid "dig"
+msgstr "Dig"
+
+msgid "upgrades"
+msgstr "Upgrades"
+
+msgid "inventory"
+msgstr "Inventory"
+
+# Level UI
+msgid "level_select"
+msgstr "Select Level"
+
+# End UI
+msgid "finished"
+msgstr "Finished"
+
+msgid "artifacts"
+msgstr "Artifacts"
+
+msgid "back"
+msgstr "Back"
+
+msgid "restart"
+msgstr "Restart"

@@ -1,3 +1,103 @@
-# Don't remove the two lines below, they're required for gettext to work correctly.
+# LANGUAGE translation for Dikker for the following files:
+# res://src/ui/ingame/ingame_ui.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
+msgstr ""
+"Project-Id-Version: Dikker\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+# Artifacts
+msgid "ammonit"
+msgstr ""
+
+msgid "ammonit_desc"
+msgstr ""
+
+msgid "bone"
+msgstr ""
+
+msgid "bone_desc"
+msgstr ""
+
+msgid "coin_rusty"
+msgstr ""
+
+msgid "coin_rusty_desc"
+msgstr ""
+
+msgid "knife_fire"
+msgstr ""
+
+msgid "knife_fire_desc"
+msgstr ""
+
+msgid "mask_monkey"
+msgstr ""
+
+msgid "mask_monkey_desc"
+msgstr ""
+
+# Level
+
+msgid "grass_level"
+msgstr ""
+
+msgid "dirt_level"
+msgstr ""
+
+msgid "stone_level"
+msgstr ""
+
+# Ingame UI
+
+msgid "permanent"
+msgstr ""
+
+msgid "this_prestige"
+msgstr ""
+
+msgid "other"
+msgstr ""
+
+msgid "prestige"
+msgstr ""
+
+msgid "store"
+msgstr ""
+
+msgid "gear"
+msgstr ""
+
+msgid "collection"
+msgstr ""
+
+msgid "dig"
+msgstr ""
+
+msgid "upgrades"
+msgstr ""
+
+msgid "inventory"
+msgstr ""
+
+# Level UI
+
+msgid "level_select"
+msgstr ""
+
+# End UI
+
+msgid "finished"
+msgstr ""
+
+msgid "artifacts"
+msgstr ""
+
+msgid "back"
+msgstr ""
+
+msgid "restart"
 msgstr ""

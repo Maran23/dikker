@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://boi8127riqu1w"]
 
-[ext_resource type="Texture2D" uid="uid://hqm8wjckpafd" path="res://assets/map/level/dirt1.webp" id="1_drm1d"]
+[ext_resource type="Texture2D" uid="uid://hqm8wjckpafd" path="res://assets/map/level/dirt/dirt1.webp" id="1_drm1d"]
 [ext_resource type="Script" uid="uid://cqqrhtceee637" path="res://src/map/block.gd" id="2_drm1d"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_drm1d"]

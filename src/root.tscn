@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgobkdf567vqd"]
+[gd_scene load_steps=7 format=3 uid="uid://bgobkdf567vqd"]
 
 [ext_resource type="Script" uid="uid://c8p8lohlf28mx" path="res://src/root.gd" id="1_4l2ve"]
-[ext_resource type="PackedScene" uid="uid://dd2s7o730xk4o" path="res://src/ui/dig_ui.tscn" id="1_pribe"]
-[ext_resource type="PackedScene" uid="uid://cxd7o0igf2h0q" path="res://src/ui/ingame_ui.tscn" id="2_4l2ve"]
-[ext_resource type="PackedScene" uid="uid://dqn1fthxlr67x" path="res://src/ui/level_select_ui.tscn" id="4_ri26b"]
-[ext_resource type="PackedScene" uid="uid://7we2yqst0vgd" path="res://src/ui/end_ui.tscn" id="5_ipfp8"]
+[ext_resource type="PackedScene" uid="uid://dd2s7o730xk4o" path="res://src/ui/dig/dig_ui.tscn" id="1_pribe"]
+[ext_resource type="PackedScene" uid="uid://cxd7o0igf2h0q" path="res://src/ui/ingame/ingame_ui.tscn" id="2_4l2ve"]
+[ext_resource type="PackedScene" uid="uid://dhd20v1jgopp5" path="res://src/ui/ingame/inventory_ui.tscn" id="4_oe21g"]
+[ext_resource type="PackedScene" uid="uid://dqn1fthxlr67x" path="res://src/ui/ingame/level/level_select_ui.tscn" id="4_ri26b"]
+[ext_resource type="PackedScene" uid="uid://7we2yqst0vgd" path="res://src/ui/ingame/level/end/end_ui.tscn" id="5_ipfp8"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_4l2ve")
@@ -13,6 +14,9 @@ script = ExtResource("1_4l2ve")
 visible = false
 
 [node name="IngameMenu" parent="." instance=ExtResource("2_4l2ve")]
+visible = false
+
+[node name="InventoryUi" parent="." instance=ExtResource("4_oe21g")]
 visible = false
 
 [node name="LevelSelectUi" parent="." instance=ExtResource("4_ri26b")]

@@ -56,7 +56,7 @@ func dug_artifact(artifact: Artifact):
 		artifact_amount -= 1
 
 		if (artifact_amount == 0):
-			Game.stop_digging.emit()
+			Game.finish_level()
 
 func is_block_blocked(block_pos: Vector2i, fill_size: Vector2i, pos_to_artifact: Dictionary[Vector2i, Artifact]) -> bool:
 	for fill_x in fill_size.x:

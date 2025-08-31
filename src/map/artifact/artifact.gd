@@ -5,6 +5,7 @@ const STAR_PARTICLES: PackedScene = preload("res://src/map/particles/star_partic
 const TRESHOLD: Vector2 = Vector2(8, 8)
 
 @export var item: ArtifactItem : set = set_item
+
 var fill_size: Vector2i
 var fill_count: int
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d300xrdqlj4lx"]
 
-[ext_resource type="Texture2D" uid="uid://dt4akvgpuxdxv" path="res://assets/map/level/star.webp" id="1_nb55p"]
+[ext_resource type="Texture2D" uid="uid://dt4akvgpuxdxv" path="res://assets/map/particle/star.webp" id="1_nb55p"]
 [ext_resource type="Script" uid="uid://bx0i143bqec55" path="res://src/map/particles/one_shot_particles.gd" id="2_yg500"]
 
 [sub_resource type="Curve" id="Curve_d2eaf"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://caj6rto2681up"]
 
-[ext_resource type="Texture2D" uid="uid://c78prtu8oa2hl" path="res://assets/map/level/bone.webp" id="1_4176h"]
+[ext_resource type="Texture2D" uid="uid://b7wfgwx2kp4hh" path="res://assets/map/artifact/knife_fire.webp" id="2_4176h"]
 [ext_resource type="Script" uid="uid://i5xwx8w6o4vh" path="res://src/map/artifact/artifact.gd" id="2_ofu1c"]
 
 [node name="Artifact" type="Sprite2D"]
-texture = ExtResource("1_4176h")
+texture = ExtResource("2_4176h")
 centered = false
 script = ExtResource("2_ofu1c")

@@ -1,7 +1,7 @@
 extends Node
 
-signal start_digging
-signal stop_digging
+signal level_started
+signal level_finished
 
 var data: Data = preload("res://data/data.tres")
 
@@ -12,6 +12,18 @@ func set_level(new_level: Level):
 	level = new_level
 
 	if (level != null):
-		start_digging.emit()
+		level_started.emit()
 	else:
+		Player.reset()
 		artifacts.clear()
+
+func finish_level():
+	for artifact: ArtifactItem in artifacts:
+		artifact.stats.count += 1
+		artifact.add_xp(1)
+
+		if (!Player.artifacts.has(artifact)):
+			Player.artifacts.push_back(artifact)
+
+	level_finished.emit()
+	SaveGame.save_save_game()
