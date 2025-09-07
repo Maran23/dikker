@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://daeoghul10pyv"]
+
+[ext_resource type="Script" uid="uid://b1njow2cwygdw" path="res://src/player/player.gd" id="1_4anbu"]
+
+[node name="Player" type="Node"]
+script = ExtResource("1_4anbu")
+
+[node name="SaveTimer" type="Timer" parent="."]
+one_shot = true

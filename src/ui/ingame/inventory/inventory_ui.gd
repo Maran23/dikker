@@ -36,10 +36,10 @@ func sell_one():
 	sell(1)
 
 func sell_25p():
-	sell(current_artifact.count * 0.25)
+	sell(max(1, current_artifact.count * 0.25))
 
 func sell_50p():
-	sell(current_artifact.count * 0.5)
+	sell(max(1, current_artifact.count * 0.5))
 
 func sell_all():
 	sell(current_artifact.count)

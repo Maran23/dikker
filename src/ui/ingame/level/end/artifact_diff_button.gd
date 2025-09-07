@@ -47,8 +47,8 @@ func _ready() -> void:
 		xp_lbl.text = str(next_level_xp) + " / " + str(next_level_xp)
 
 		var tween: Tween = create_tween()
-		tween.tween_property(xp_bar, ^"value",next_level_xp, 0.7)
-		tween.finished.connect(update_level_xp.bind(0))
+		tween.tween_property(xp_bar, ^"value",next_level_xp, 1)
+		tween.tween_callback(update_level_xp.bind(0))
 	else:
 		update_level_xp(prev_stats.xp)
 
@@ -60,7 +60,7 @@ func update_level_xp(start_xp: int):
 	xp_lbl.text = str(artifact.stats.xp) + " / " + str(next_level_xp)
 
 	var tween: Tween = create_tween()
-	tween.tween_property(xp_bar, ^"value", artifact.stats.xp, 0.7)
+	tween.tween_property(xp_bar, ^"value", artifact.stats.xp, 1)
 
 func set_artifact(new_artifact: ArtifactItem):
 	artifact = new_artifact

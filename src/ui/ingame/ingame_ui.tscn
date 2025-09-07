@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cxd7o0igf2h0q"]
+[gd_scene load_steps=15 format=3 uid="uid://cxd7o0igf2h0q"]
 
 [ext_resource type="Script" uid="uid://dk8q475e3baxq" path="res://src/ui/ingame/ingame_ui.gd" id="1_f8ije"]
 [ext_resource type="PackedScene" uid="uid://lgd2g38edtud" path="res://src/ui/components/border_panel_container.tscn" id="2_kfvuw"]
@@ -14,6 +14,18 @@
 [ext_resource type="PackedScene" uid="uid://bh0lr4k51hi6o" path="res://src/ui/ingame/section_vbox.tscn" id="7_rm1f2"]
 [ext_resource type="Texture2D" uid="uid://hcllaf87bde8" path="res://assets/ui/icon/inventory.webp" id="12_kfvuw"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfvuw"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.443137, 0.443137, 0.443137, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
 [node name="IngameUi" type="CanvasLayer"]
 script = ExtResource("1_f8ije")
 
@@ -25,169 +37,174 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="BorderPanelContainer" parent="HBoxContainer" instance=ExtResource("2_kfvuw")]
+[node name="CurrencyPanel" parent="HBoxContainer" instance=ExtResource("2_kfvuw")]
 layout_mode = 2
 size_flags_horizontal = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer" index="0"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer" index="0"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="SectionVBox" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_rm1f2")]
+[node name="SectionVBox" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_rm1f2")]
 layout_mode = 2
 
-[node name="Label" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer" index="0"]
+[node name="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer" index="0"]
 text = "permanent"
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer" index="1"]
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer" index="1"]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("4_mcd4b")
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
-[node name="Label2" type="Label" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="LevelLbl" type="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "1"
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_kfvuw")
+text = "999"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="ProgressBar" type="ProgressBar" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="XpBar" type="ProgressBar" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-step = 1.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ProgressBar"]
+[node name="XpLbl" type="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/XpBar"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 32
 text = "0 / 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ValueContainer" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer" index="2" instance=ExtResource("3_sfhn3")]
+[node name="ValueContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer" index="2" instance=ExtResource("3_sfhn3")]
 layout_mode = 2
 
-[node name="TextureRect" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer/MarginContainer/HBoxContainer" index="0"]
+[node name="TextureRect" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer/MarginContainer/HBoxContainer" index="0"]
 texture = ExtResource("4_rm1f2")
 
-[node name="Label" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer/MarginContainer/HBoxContainer" index="1"]
+[node name="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer/MarginContainer/HBoxContainer" index="1"]
 text = "0"
 
-[node name="ValueContainer3" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer" index="3" instance=ExtResource("3_sfhn3")]
+[node name="ValueContainer3" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer" index="3" instance=ExtResource("3_sfhn3")]
 layout_mode = 2
 
-[node name="TextureRect" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer3/MarginContainer/HBoxContainer" index="0"]
+[node name="TextureRect" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer3/MarginContainer/HBoxContainer" index="0"]
 texture = ExtResource("6_kfvuw")
 
-[node name="Label" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer3/MarginContainer/HBoxContainer" index="1"]
+[node name="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer3/MarginContainer/HBoxContainer" index="1"]
 text = "0"
 
-[node name="SectionVBox2" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_rm1f2")]
+[node name="SectionVBox2" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_rm1f2")]
 layout_mode = 2
 
-[node name="Label" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer" index="0"]
+[node name="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer" index="0"]
 text = "this_prestige"
 
-[node name="CoinValueContainer" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer" index="1" instance=ExtResource("3_sfhn3")]
+[node name="CoinValueContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer" index="1" instance=ExtResource("3_sfhn3")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="TextureRect" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/CoinValueContainer/MarginContainer/HBoxContainer" index="0"]
+[node name="TextureRect" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/CoinValueContainer/MarginContainer/HBoxContainer" index="0"]
 texture = ExtResource("5_mcd4b")
 
-[node name="Label" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/CoinValueContainer/MarginContainer/HBoxContainer" index="1"]
+[node name="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/CoinValueContainer/MarginContainer/HBoxContainer" index="1"]
 text = "0"
 
-[node name="BorderPanelContainer2" parent="HBoxContainer" instance=ExtResource("2_kfvuw")]
+[node name="ButtonsPanel" parent="HBoxContainer" instance=ExtResource("2_kfvuw")]
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer" index="0"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer" index="0"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 
-[node name="PermantSection" parent="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_24kjr")]
+[node name="PermantSection" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_24kjr")]
 layout_mode = 2
 
-[node name="Label" parent="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/PanelContainer" index="0"]
+[node name="Label" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/PanelContainer" index="0"]
 text = "permanent"
 
-[node name="UniformIconButton" parent="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="0" instance=ExtResource("4_e1l4u")]
+[node name="UniformIconButton" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="0" instance=ExtResource("4_e1l4u")]
 layout_mode = 2
 text = "prestige"
 icon = ExtResource("4_rm1f2")
 
-[node name="UniformIconButton2" parent="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="1" instance=ExtResource("4_e1l4u")]
+[node name="UniformIconButton2" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="1" instance=ExtResource("4_e1l4u")]
 layout_mode = 2
 text = "store"
 icon = ExtResource("6_kfvuw")
 
-[node name="UniformIconButton3" parent="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="2" instance=ExtResource("4_e1l4u")]
+[node name="UniformIconButton3" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="2" instance=ExtResource("4_e1l4u")]
 layout_mode = 2
 text = "gear"
 
-[node name="UniformIconButton4" parent="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="3" instance=ExtResource("4_e1l4u")]
+[node name="UniformIconButton4" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="3" instance=ExtResource("4_e1l4u")]
 layout_mode = 2
 text = "collection"
 icon = ExtResource("6_xvytg")
 
-[node name="PrestigeSection" parent="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_24kjr")]
+[node name="PrestigeSection" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_24kjr")]
 layout_mode = 2
 
-[node name="Label" parent="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection/MarginContainer/VBoxContainer/PanelContainer" index="0"]
+[node name="Label" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection/MarginContainer/VBoxContainer/PanelContainer" index="0"]
 text = "this_prestige"
 
-[node name="DigBtn" parent="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="0" instance=ExtResource("4_e1l4u")]
+[node name="DigBtn" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="0" instance=ExtResource("4_e1l4u")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "dig"
 
-[node name="UniformIconButton2" parent="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="1" instance=ExtResource("4_e1l4u")]
+[node name="UpgradesBtn" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="1" instance=ExtResource("4_e1l4u")]
+unique_name_in_owner = true
 layout_mode = 2
 text = "upgrades"
 icon = ExtResource("5_0sowk")
 
-[node name="InventoryBtn" parent="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="2" instance=ExtResource("4_e1l4u")]
+[node name="InventoryBtn" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="2" instance=ExtResource("4_e1l4u")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "inventory"
 icon = ExtResource("12_kfvuw")
 
-[node name="OtherSection" parent="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_24kjr")]
+[node name="OtherSection" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_24kjr")]
 layout_mode = 2
 
-[node name="Label" parent="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/OtherSection/MarginContainer/VBoxContainer/PanelContainer" index="0"]
+[node name="Label" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/OtherSection/MarginContainer/VBoxContainer/PanelContainer" index="0"]
 text = "other"
 
-[editable path="HBoxContainer/BorderPanelContainer"]
-[editable path="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox"]
-[editable path="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer"]
-[editable path="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer3"]
-[editable path="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2"]
-[editable path="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/CoinValueContainer"]
-[editable path="HBoxContainer/BorderPanelContainer2"]
-[editable path="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection"]
-[editable path="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection"]
-[editable path="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/OtherSection"]
+[editable path="HBoxContainer/CurrencyPanel"]
+[editable path="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox"]
+[editable path="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer"]
+[editable path="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer3"]
+[editable path="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2"]
+[editable path="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/CoinValueContainer"]
+[editable path="HBoxContainer/ButtonsPanel"]
+[editable path="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection"]
+[editable path="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection"]
+[editable path="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/OtherSection"]

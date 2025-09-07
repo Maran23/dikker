@@ -9,7 +9,7 @@ void fragment() {
 	if (COLOR.a > 0.0) {
 		// Calculate shine progress based on time.
 		float shine_progress = tan(TIME * speed);
-	
+
 		// Calculate the direction of the shine based on angle.
 		float angle_rad = radians(shine_angle);
 		vec2 shine_direction = vec2(cos(angle_rad), sin(angle_rad));
@@ -20,7 +20,7 @@ void fragment() {
 		// Determine shine visibility.
 		float shine_value_progress = step(shine_value, shine_progress);
 		float shine_alpha = step(shine_value, shine_progress + shine_size) - shine_value_progress;
-		
+
 		// Mix the original color with the shine color based on calculated alpha
 		COLOR.rgb = mix(COLOR.rgb, shine_color.rgb, shine_alpha * shine_color.a);
 	}

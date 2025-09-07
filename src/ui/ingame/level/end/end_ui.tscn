@@ -1,6 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://7we2yqst0vgd"]
+[gd_scene load_steps=4 format=3 uid="uid://7we2yqst0vgd"]
 
 [ext_resource type="Script" uid="uid://fwdsdmxdc45o" path="res://src/ui/ingame/level/end/end_ui.gd" id="1_tg173"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2d8x"]
+bg_color = Color(0.6, 0.6, 0.6, 0.0941176)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 0.0941176)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xde1e"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.443137, 0.443137, 0.443137, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 
 [node name="EndUi" type="CanvasLayer"]
 script = ExtResource("1_tg173")
@@ -22,32 +42,105 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="Header" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d2d8x")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="PlayerStats" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/PlayerStats"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "player"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/PlayerStats"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="LevelLbl" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/PlayerStats/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_xde1e")
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="XpBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/PlayerStats/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+show_percentage = false
+
+[node name="XpLbl" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/PlayerStats/HBoxContainer/XpBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "100 / 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Header" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 96
 bbcode_enabled = true
 text = "[wave amp=80.0 freq=5.0 connected=1]{finished}[/wave]"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_d2d8x")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ArtifactStats" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer2/MarginContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer2/MarginContainer/ArtifactStats"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "artifacts"
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer2/MarginContainer/ArtifactStats"]
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="ArtifactList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer/ScrollContainer"]
+[node name="ArtifactList" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer2/MarginContainer/ArtifactStats/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3

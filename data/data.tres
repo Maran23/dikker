@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="Data" load_steps=35 format=3 uid="uid://ccd5tqi2itbot"]
+[gd_resource type="Resource" script_class="Data" load_steps=41 format=3 uid="uid://ccd5tqi2itbot"]
 
-[ext_resource type="Script" uid="uid://bp2or3y2rt5gs" path="res://data/level.gd" id="1_i3on4"]
+[ext_resource type="Script" uid="uid://bp2or3y2rt5gs" path="res://data/level/level.gd" id="1_8kyea"]
 [ext_resource type="Script" uid="uid://n4jum6dwqx2j" path="res://data/artifact/artifact_info.gd" id="2_8kyea"]
 [ext_resource type="Script" uid="uid://ck7xbm8va0wlh" path="res://data/data.gd" id="2_h2d3w"]
 [ext_resource type="Texture2D" uid="uid://bwfu1oq56x3up" path="res://assets/map/artifact/coin_rusty.webp" id="3_tc0r5"]
@@ -26,6 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://bo2tvmnpbfqa1" path="res://assets/map/level/stone/stone3.webp" id="21_lagmg"]
 [ext_resource type="Texture2D" uid="uid://cefrkkkke08rt" path="res://assets/map/level/stone/stone4.webp" id="22_1gv2p"]
 [ext_resource type="Texture2D" uid="uid://ctjod212gjxbv" path="res://assets/map/level/stone/stone_level.webp" id="23_s7gyx"]
+[ext_resource type="Script" uid="uid://cs7k5sc862itr" path="res://data/upgrade/upgrade.gd" id="27_ttcv8"]
+[ext_resource type="Texture2D" uid="uid://c3xl566njkdtf" path="res://assets/ui/icon/arrow_up.webp" id="28_kityl"]
 
 [sub_resource type="Resource" id="Resource_2uby0"]
 script = ExtResource("2_8kyea")
@@ -73,7 +75,7 @@ level_up_xp = 2
 metadata/_custom_type_script = "uid://n4jum6dwqx2j"
 
 [sub_resource type="Resource" id="Resource_vu40f"]
-script = ExtResource("1_i3on4")
+script = ExtResource("1_8kyea")
 name = "grass_level"
 image = ExtResource("10_xphq4")
 block_hp = 1
@@ -88,7 +90,7 @@ artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubRes
 metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
 
 [sub_resource type="Resource" id="Resource_1h35d"]
-script = ExtResource("1_i3on4")
+script = ExtResource("1_8kyea")
 name = "dirt_level"
 image = ExtResource("16_sto4h")
 block_hp = 2
@@ -103,7 +105,7 @@ artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubRes
 metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
 
 [sub_resource type="Resource" id="Resource_o3r0c"]
-script = ExtResource("1_i3on4")
+script = ExtResource("1_8kyea")
 name = "stone_level"
 image = ExtResource("23_s7gyx")
 block_hp = 3
@@ -117,7 +119,56 @@ max_artifacts = 10
 artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5")])
 metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
 
+[sub_resource type="Resource" id="Resource_kityl"]
+script = ExtResource("27_ttcv8")
+title = "stamina_up"
+image = ExtResource("28_kityl")
+cap = 10
+attribute = 0
+improvement = 1.0
+improvement_type = 0
+cost = 50
+level_requirement = 3
+metadata/_custom_type_script = "uid://cs7k5sc862itr"
+
+[sub_resource type="Resource" id="Resource_siy3q"]
+script = ExtResource("27_ttcv8")
+title = "damage_up"
+image = ExtResource("28_kityl")
+cap = 10
+attribute = 0
+improvement = 1.0
+improvement_type = 0
+cost = 500
+level_requirement = 7
+metadata/_custom_type_script = "uid://cs7k5sc862itr"
+
+[sub_resource type="Resource" id="Resource_o1wax"]
+script = ExtResource("27_ttcv8")
+title = "stamina_up2"
+image = ExtResource("28_kityl")
+cap = 5
+attribute = 0
+improvement = 1.0
+improvement_type = 0
+cost = 300
+level_requirement = 10
+metadata/_custom_type_script = "uid://cs7k5sc862itr"
+
+[sub_resource type="Resource" id="Resource_xphq4"]
+script = ExtResource("27_ttcv8")
+title = "damage_up2"
+image = ExtResource("28_kityl")
+cap = 5
+attribute = 0
+improvement = 1.0
+improvement_type = 0
+cost = 1000
+level_requirement = 15
+metadata/_custom_type_script = "uid://cs7k5sc862itr"
+
 [resource]
 script = ExtResource("2_h2d3w")
-levels = Array[ExtResource("1_i3on4")]([SubResource("Resource_vu40f"), SubResource("Resource_1h35d"), SubResource("Resource_o3r0c")])
+levels = Array[ExtResource("1_8kyea")]([SubResource("Resource_vu40f"), SubResource("Resource_1h35d"), SubResource("Resource_o3r0c")])
+upgrades = Array[ExtResource("27_ttcv8")]([SubResource("Resource_kityl"), SubResource("Resource_siy3q"), SubResource("Resource_o1wax"), SubResource("Resource_xphq4")])
 metadata/_custom_type_script = "uid://ck7xbm8va0wlh"

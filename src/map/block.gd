@@ -27,7 +27,7 @@ func set_level(new_level: Level):
 		add_child(top_layer)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if (!Player.has_stamina()):
+	if (!Game.has_stamina()):
 		return
 
 	if (event.is_action_pressed(&"dig") && get_rect().has_point(get_local_mouse_position())):
@@ -37,14 +37,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		particles.position = get_parent().get_local_mouse_position()
 		get_parent().add_child(particles)
 
-		hp -= 1
-		if (hp == 0):
+		hp -= Player.damage
+		if (hp <= 0):
 			dug.emit()
 			queue_free()
 		else:
 			show_crack()
 
-		Player.stamina -= 1
+		Game.stamina -= 1
 
 func show_crack():
 	var down_percent: float = hp as float / max_hp as float

@@ -20,8 +20,9 @@ func get_value() -> int:
 	if (stats.level == 1):
 		return info.value * get_rarity_multiplier()
 
-	var additional_increase: int = pow(ADDITIONAL_MULTIPLIER, stats.level)
-	return (info.value + (INCREASE_RATE * (stats.level - 1)) + additional_increase) * get_rarity_multiplier()
+	var additional_increase: float = pow(ADDITIONAL_MULTIPLIER, stats.level)
+	var level_increase: float = INCREASE_RATE * (stats.level - 1)
+	return (info.value + level_increase + additional_increase) * get_rarity_multiplier()
 
 func get_rarity_multiplier() -> int:
 	match (rarity):

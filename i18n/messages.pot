@@ -88,6 +88,40 @@ msgstr ""
 msgid "level_select"
 msgstr ""
 
+# Upgrades
+
+msgid "stamina_up"
+msgstr ""
+
+msgid "stamina_up2"
+msgstr ""
+
+msgid "stamina_up3"
+msgstr ""
+
+msgid "damage_up"
+msgstr ""
+
+msgid "damage_up2"
+msgstr ""
+
+msgid "damage_up3"
+msgstr ""
+
+# Inventory
+
+msgid "sell_one"
+msgstr ""
+
+msgid "sell_25p"
+msgstr ""
+
+msgid "sell_50p"
+msgstr ""
+
+msgid "sell_all"
+msgstr ""
+
 # End UI
 
 msgid "finished"
@@ -100,4 +134,7 @@ msgid "back"
 msgstr ""
 
 msgid "restart"
+msgstr ""
+
+msgid "player"
 msgstr ""

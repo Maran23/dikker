@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Game="*res://src/game.gd"
-Player="*res://src/player.gd"
+Player="*res://src/player/player.tscn"
 Utils="*res://src/utils/utils.gd"
 
 [display]
@@ -64,3 +64,4 @@ locale/translations=PackedStringArray("res://i18n/en.po")
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true
