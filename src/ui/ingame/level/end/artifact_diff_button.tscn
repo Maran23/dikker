@@ -1,8 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctfpnolcgnsox"]
+[gd_scene load_steps=6 format=3 uid="uid://ctfpnolcgnsox"]
 
 [ext_resource type="Script" uid="uid://drf65cjjt7yf6" path="res://src/ui/ingame/level/end/artifact_diff_button.gd" id="1_y4wed"]
 [ext_resource type="Texture2D" uid="uid://dqpbl8qggjqqx" path="res://assets/map/artifact/ammonit.webp" id="2_put88"]
 [ext_resource type="Texture2D" uid="uid://dtayffjjwm2t2" path="res://assets/ui/currency/coin.webp" id="3_8yatw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4wed"]
+bg_color = Color(0.6, 0.6, 0.6, 0.0941176)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 0.0941176)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqjy7"]
 content_margin_left = 4.0
@@ -18,7 +26,10 @@ border_color = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(256, 256)
 offset_right = 312.0
 offset_bottom = 294.0
-flat = true
+focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxFlat_y4wed")
+disabled = true
+button_mask = 0
 script = ExtResource("1_y4wed")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

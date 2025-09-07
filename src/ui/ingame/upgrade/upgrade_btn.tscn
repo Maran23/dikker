@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cga4hmjnrrowg"]
 
-[ext_resource type="Texture2D" uid="uid://c3xl566njkdtf" path="res://assets/ui/icon/arrow_up.webp" id="1_djhwy"]
+[ext_resource type="Texture2D" uid="uid://c3xl566njkdtf" path="res://assets/ui/icon/ingame/arrow_up.webp" id="1_djhwy"]
 [ext_resource type="Script" uid="uid://dolc54df8cnqv" path="res://src/ui/ingame/upgrade/upgrade_btn.gd" id="1_tj2qi"]
 [ext_resource type="Texture2D" uid="uid://dtayffjjwm2t2" path="res://assets/ui/currency/coin.webp" id="2_tj2qi"]
 
@@ -8,7 +8,6 @@
 custom_minimum_size = Vector2(512, 128)
 offset_right = 512.0
 offset_bottom = 128.0
-disabled = true
 script = ExtResource("1_tj2qi")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -25,7 +24,7 @@ theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 5
+theme_override_constants/separation = 20
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -75,7 +74,6 @@ text = "6"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-alignment = 2
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -91,5 +89,6 @@ stretch_mode = 5
 
 [node name="CostLbl" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 text = "50000"

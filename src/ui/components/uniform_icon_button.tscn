@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dqnuttli5b3sv"]
 
-[ext_resource type="Texture2D" uid="uid://cffe7hj2owwmi" path="res://assets/ui/icon/shovel.webp" id="1_2jyl4"]
+[ext_resource type="Texture2D" uid="uid://cffe7hj2owwmi" path="res://assets/ui/icon/ingame/shovel.webp" id="1_2jyl4"]
 
 [node name="UniformIconButton" type="Button"]
 custom_minimum_size = Vector2(256, 256)

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3xl566njkdtf"
-path="res://.godot/imported/arrow_up.webp-70e67b34eb14fa61dc7bee0d43c3d462.ctex"
+path="res://.godot/imported/arrow_up.webp-452b41fe7bb5e83bd2c1afa28e0a534e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/icon/arrow_up.webp"
-dest_files=["res://.godot/imported/arrow_up.webp-70e67b34eb14fa61dc7bee0d43c3d462.ctex"]
+source_file="res://assets/ui/icon/ingame/arrow_up.webp"
+dest_files=["res://.godot/imported/arrow_up.webp-452b41fe7bb5e83bd2c1afa28e0a534e.ctex"]
 
 [params]
 

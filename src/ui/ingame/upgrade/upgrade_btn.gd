@@ -17,7 +17,8 @@ func update():
 	var upgrade: Upgrade = upgrade_item.upgrade
 	var cost: int = calc_cost()
 
-	disabled = upgrade.level_requirement > Player.level || Player.coins < cost
+	var level_too_low: bool = upgrade.level_requirement > Player.level
+	disabled = level_too_low || Player.coins < cost
 
 	if (disabled):
 		modulate = Color.html("#b6b6b6")
@@ -27,6 +28,13 @@ func update():
 	image_rect.texture = upgrade.image
 	cap_lbl.text = str(upgrade_item.count) + "/" + str(upgrade.cap)
 	title_lbl.text = upgrade.title
+
+	if (level_too_low):
+		title_lbl.text = tr(upgrade.title) + " " + tr("level_required") % upgrade.level_requirement
+		title_lbl.add_theme_color_override(&"font_color", Color.html("#d74343"))
+	else:
+		title_lbl.text = upgrade.title
+		title_lbl.remove_theme_color_override(&"font_color")
 
 	base_lbl.text = pad_zeroes(upgrade.improvement * upgrade_item.count)
 	improvement_lbl.text = pad_zeroes(upgrade.improvement * (upgrade_item.count + 1))

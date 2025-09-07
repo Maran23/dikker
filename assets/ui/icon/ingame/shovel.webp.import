@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpf5uoam7nte0"
-path="res://.godot/imported/collection.webp-27dc0f976901876e8eb750a9418d9bce.ctex"
+uid="uid://cffe7hj2owwmi"
+path="res://.godot/imported/shovel.webp-d40fa37a4510cdfd486ae39a6727e893.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/icon/collection.webp"
-dest_files=["res://.godot/imported/collection.webp-27dc0f976901876e8eb750a9418d9bce.ctex"]
+source_file="res://assets/ui/icon/ingame/shovel.webp"
+dest_files=["res://.godot/imported/shovel.webp-d40fa37a4510cdfd486ae39a6727e893.ctex"]
 
 [params]
 

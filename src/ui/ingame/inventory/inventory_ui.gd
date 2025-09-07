@@ -105,6 +105,7 @@ func update_artifact_details():
 
 		if (current_artifact != null):
 			artifacts_flow_container.remove_child(current_btn)
+			current_btn.queue_free()
 
 			back_btn.grab_focus()
 	else:

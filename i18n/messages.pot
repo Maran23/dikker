@@ -90,6 +90,9 @@ msgstr ""
 
 # Upgrades
 
+msgid "level_required"
+msgstr ""
+
 msgid "stamina_up"
 msgstr ""
 

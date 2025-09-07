@@ -7,12 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://dqnuttli5b3sv" path="res://src/ui/components/uniform_icon_button.tscn" id="4_e1l4u"]
 [ext_resource type="StyleBox" uid="uid://cpkdte5woiv0y" path="res://theme/dark_bg.tres" id="4_mcd4b"]
 [ext_resource type="Texture2D" uid="uid://dh1idqfnxsl1d" path="res://assets/ui/currency/prestige.webp" id="4_rm1f2"]
-[ext_resource type="Texture2D" uid="uid://c3xl566njkdtf" path="res://assets/ui/icon/arrow_up.webp" id="5_0sowk"]
+[ext_resource type="Texture2D" uid="uid://c3xl566njkdtf" path="res://assets/ui/icon/ingame/arrow_up.webp" id="5_0sowk"]
 [ext_resource type="Texture2D" uid="uid://dtayffjjwm2t2" path="res://assets/ui/currency/coin.webp" id="5_mcd4b"]
 [ext_resource type="Texture2D" uid="uid://c4cqqsbca4c05" path="res://assets/ui/currency/gem.webp" id="6_kfvuw"]
-[ext_resource type="Texture2D" uid="uid://dpf5uoam7nte0" path="res://assets/ui/icon/collection.webp" id="6_xvytg"]
+[ext_resource type="Texture2D" uid="uid://dpf5uoam7nte0" path="res://assets/ui/icon/ingame/collection.webp" id="6_xvytg"]
 [ext_resource type="PackedScene" uid="uid://bh0lr4k51hi6o" path="res://src/ui/ingame/section_vbox.tscn" id="7_rm1f2"]
-[ext_resource type="Texture2D" uid="uid://hcllaf87bde8" path="res://assets/ui/icon/inventory.webp" id="12_kfvuw"]
+[ext_resource type="Texture2D" uid="uid://hcllaf87bde8" path="res://assets/ui/icon/ingame/inventory.webp" id="12_kfvuw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfvuw"]
 content_margin_left = 4.0

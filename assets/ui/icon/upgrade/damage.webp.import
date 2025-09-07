@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cffe7hj2owwmi"
-path="res://.godot/imported/shovel.webp-c371afa04c3fb3de5c3fd297143cc385.ctex"
+uid="uid://dnhbrt41dpys3"
+path="res://.godot/imported/damage.webp-573f651dc4798a87f7d7cd6517fad2ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/icon/shovel.webp"
-dest_files=["res://.godot/imported/shovel.webp-c371afa04c3fb3de5c3fd297143cc385.ctex"]
+source_file="res://assets/ui/icon/upgrade/damage.webp"
+dest_files=["res://.godot/imported/damage.webp-573f651dc4798a87f7d7cd6517fad2ab.ctex"]
 
 [params]
 

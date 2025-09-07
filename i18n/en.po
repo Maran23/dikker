@@ -90,6 +90,9 @@ msgstr "Select Level"
 
 # Upgrades
 
+msgid "level_required"
+msgstr "(Level required: %s)"
+
 msgid "stamina_up"
 msgstr "Increase Stamina"
 
