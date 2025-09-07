@@ -18,7 +18,9 @@ func generate():
 		artifact_amount += 1
 
 		var artifact: Artifact = ARTIFACT_SCENE.instantiate()
-		artifact.item = Utils.random_from_array(level.artifacts)
+		var artifact_info: ArtifactInfo = Utils.random_from_array(level.artifacts)
+		var artifact_item: ArtifactItem = Player.get_artifact_item(artifact_info)
+		artifact.item = artifact_item
 
 		var fill_size: Vector2i = artifact.get_block_fill_size()
 		var start_block_pos: Vector2i
@@ -40,8 +42,8 @@ func generate():
 		for col: int in level.block_columns:
 			var block: Block = BLOCK_SCENE.instantiate()
 			block.level = level
-			var block_pos: Vector2i = Vector2i(col, row)
 
+			var block_pos: Vector2i = Vector2i(col, row)
 			var artifact: Artifact = pos_to_artifact.get(block_pos)
 			if (artifact != null):
 				block.dug.connect(dug_artifact.bind(artifact))

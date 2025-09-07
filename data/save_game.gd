@@ -8,7 +8,7 @@ const PATH: String = "user://dikker.tres"
 @export var coins: int = 0
 @export var gems: int = 0
 
-@export var artifacts: Dictionary[String, Stats]
+@export var artifacts: Array[ArtifactItem]
 
 static func load_save_game():
 	if (!ResourceLoader.exists(PATH)):
@@ -24,16 +24,7 @@ static func load_save_game():
 	Player.coins = save_game.coins
 	Player.gems = save_game.gems
 
-	var artifacts: Array[ArtifactItem] = []
-	for artifact_name: String in save_game.artifacts:
-		var stats: Stats = save_game.artifacts[artifact_name]
-
-		var artifact: ArtifactItem = Game.data.get_artifact_item(artifact_name)
-		artifact.stats = stats
-
-		artifacts.push_back(artifact)
-
-	Player.artifacts = artifacts
+	Player.artifacts = save_game.artifacts
 
 static func save_save_game():
 	var save_game: SaveGame = SaveGame.new()
@@ -43,11 +34,7 @@ static func save_save_game():
 	save_game.coins = Player.coins
 	save_game.gems = Player.gems
 
-	var artifacts: Dictionary[String, Stats] = {}
-	for artifact: ArtifactItem in Player.artifacts:
-		artifacts[artifact.name] = artifact.stats
-
-	save_game.artifacts = artifacts
+	save_game.artifacts = Player.artifacts
 
 	var error: Error = ResourceSaver.save(save_game, PATH)
 	if (error != OK):

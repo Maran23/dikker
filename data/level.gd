@@ -15,4 +15,4 @@ class_name Level extends Resource
 @export var min_artifacts: int
 @export var max_artifacts: int
 
-@export var artifacts: Array[ArtifactItem]
+@export var artifacts: Array[ArtifactInfo]

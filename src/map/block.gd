@@ -5,10 +5,11 @@ const DIG_PARTICLES: PackedScene = preload("res://src/map/particles/dig_particle
 signal dug
 
 var level: Level : set = set_level
-var top_layer: Sprite2D
 
 var max_hp: int
 var hp: int
+
+var crack: Sprite2D
 
 func set_level(new_level: Level):
 	level = new_level
@@ -19,7 +20,7 @@ func set_level(new_level: Level):
 	texture = Utils.random_from_array(level.blocks)
 
 	if (Utils.random_chance_1_100(10)):
-		top_layer = Sprite2D.new()
+		var top_layer: Sprite2D = Sprite2D.new()
 		top_layer.centered = false
 		top_layer.texture = Utils.random_from_array(level.top_layers)
 
@@ -37,9 +38,25 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_parent().add_child(particles)
 
 		hp -= 1
-		Player.stamina -= 1
-
 		if (hp == 0):
 			dug.emit()
-
 			queue_free()
+		else:
+			show_crack()
+
+		Player.stamina -= 1
+
+func show_crack():
+	var down_percent: float = hp as float / max_hp as float
+
+	if (crack == null):
+		crack = Sprite2D.new()
+		crack.centered = false
+		add_child(crack)
+
+	if (down_percent <= 0.33):
+		crack.texture = load("res://assets/map/crack/crack_big.webp")
+	elif (down_percent <= 0.66):
+		crack.texture = load("res://assets/map/crack/crack_medium.webp")
+	else:
+		crack.texture = load("res://assets/map/crack/crack_small.webp")

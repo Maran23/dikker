@@ -1,5 +1,4 @@
 # LANGUAGE translation for Dikker for the following files:
-# res://src/ui/ingame/ingame_ui.tscn
 #
 # Automatically generated, 2025.
 msgid ""
@@ -42,7 +41,7 @@ msgid "mask_monkey"
 msgstr "Monkey Mask"
 
 msgid "mask_monkey_desc"
-msgstr "This masks seems to be influenced by monkeys"
+msgstr "This mask seems to be influenced by monkeys"
 
 # Level
 msgid "grass_level"

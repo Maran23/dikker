@@ -106,13 +106,14 @@ layout_mode = 2
 [node name="Label" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer" index="0"]
 text = "this_prestige"
 
-[node name="ValueContainer2" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer" index="1" instance=ExtResource("3_sfhn3")]
+[node name="CoinValueContainer" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer" index="1" instance=ExtResource("3_sfhn3")]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="TextureRect" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/ValueContainer2/MarginContainer/HBoxContainer" index="0"]
+[node name="TextureRect" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/CoinValueContainer/MarginContainer/HBoxContainer" index="0"]
 texture = ExtResource("5_mcd4b")
 
-[node name="Label" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/ValueContainer2/MarginContainer/HBoxContainer" index="1"]
+[node name="Label" parent="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/CoinValueContainer/MarginContainer/HBoxContainer" index="1"]
 text = "0"
 
 [node name="BorderPanelContainer2" parent="HBoxContainer" instance=ExtResource("2_kfvuw")]
@@ -185,7 +186,7 @@ text = "other"
 [editable path="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer"]
 [editable path="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer3"]
 [editable path="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2"]
-[editable path="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/ValueContainer2"]
+[editable path="HBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/CoinValueContainer"]
 [editable path="HBoxContainer/BorderPanelContainer2"]
 [editable path="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection"]
 [editable path="HBoxContainer/BorderPanelContainer2/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection"]

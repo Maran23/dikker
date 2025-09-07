@@ -1,8 +1,9 @@
-extends MenuCanvasLayer
+class_name LevelSelectUi extends MenuCanvasLayer
 
 const UNIFORM_ICON_BUTTON = preload("res://src/ui/components/uniform_icon_button.tscn")
 
 @onready var level_flow_container: HFlowContainer = %LevelFlowContainer
+@onready var back_btn: Button = %BackBtn
 
 func _ready() -> void:
 	super._ready()

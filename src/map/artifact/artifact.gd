@@ -12,7 +12,7 @@ var fill_count: int
 func set_item(new_item: ArtifactItem):
 	item = new_item
 
-	texture = item.image
+	texture = item.info.image
 
 	flip_h = Utils.random_boolean()
 	flip_v = Utils.random_boolean()
@@ -31,7 +31,7 @@ func block_dug():
 	fill_count -= 1
 
 	if (fill_count == 0):
-		Game.artifacts.push_back(item)
+		Game.add_artifact(item)
 
 		var stars: GPUParticles2D = STAR_PARTICLES.instantiate()
 		stars.amount = fill_size.x * fill_size.y * 8

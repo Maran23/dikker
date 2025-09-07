@@ -1,6 +1,6 @@
 class_name EndUi extends MenuCanvasLayer
 
-const ARTIFACT_BUTTON: PackedScene = preload("res://src/ui/components/artifact_button.tscn")
+const ARTIFACT_DIFF_BUTTON: PackedScene = preload("res://src/ui/ingame/level/end/artifact_diff_button.tscn")
 
 @onready var artifact_list: VBoxContainer = %ArtifactList
 @onready var continue_btn: Button = %ContinueBtn
@@ -18,7 +18,7 @@ func on_menu_visible():
 		child.free()
 
 	for artifact: ArtifactItem in Game.artifacts:
-		var btn: ArtifactButton = ARTIFACT_BUTTON.instantiate()
+		var btn: ArtifactDiffButton = ARTIFACT_DIFF_BUTTON.instantiate()
 		btn.set_artifact(artifact)
 
 		artifact_list.add_child(btn)
