@@ -16,7 +16,7 @@ theme_override_constants/separation = 10
 [node name="Label" type="Label" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "inventory"
+text = "upgrades"
 horizontal_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]

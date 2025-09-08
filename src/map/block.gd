@@ -2,7 +2,7 @@ class_name Block extends Sprite2D
 
 const DIG_PARTICLES: PackedScene = preload("res://src/map/particles/dig_particles.tscn")
 
-signal dug
+signal destroyed
 
 var level: Level : set = set_level
 
@@ -39,7 +39,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 		hp -= Player.damage
 		if (hp <= 0):
-			dug.emit()
+			destroyed.emit()
 			queue_free()
 		else:
 			show_crack()

@@ -10,6 +10,9 @@ signal coins_changed
 signal xp_changed
 signal level_changed
 
+signal stamina_changed
+signal damage_changed
+
 @onready var save_timer: Timer = $SaveTimer
 
 var level: int = 1 : set = set_level
@@ -21,13 +24,15 @@ var gems: int
 var artifacts: Array[ArtifactItem] = []
 var upgrades: Array[UpgradeItem] = []
 
-var max_stamina: int = DEF_STAMINA
-var damage: int = DEF_DAMAGE
+var stamina: int = DEF_STAMINA : set = set_stamina
+var damage: int = DEF_DAMAGE : set = set_damage
 
 func _ready() -> void:
 	SaveGame.load_save_game()
 
 	apply_stats()
+
+	save_timer.stop()
 	save_timer.timeout.connect(SaveGame.save_save_game)
 
 func set_coins(new_coins: int):
@@ -43,6 +48,16 @@ func set_level(new_level: int):
 	level_changed.emit()
 
 	save()
+
+func set_stamina(new_stamina: int):
+	stamina = new_stamina
+
+	stamina_changed.emit()
+
+func set_damage(new_damage: int):
+	damage = new_damage
+
+	damage_changed.emit()
 
 func set_xp(new_xp: int):
 	xp = new_xp
@@ -65,9 +80,25 @@ func add_upgrade(upgrade_item: UpgradeItem):
 	apply_stats()
 	save()
 
-func get_artifact_item(info: ArtifactInfo) -> ArtifactItem:
-	#var found_artifact: ArtifactItem
+func get_artifact_item(info: ArtifactInfo, rarity: ArtifactItem.Rarity) -> ArtifactItem:
+	var item: ArtifactItem = find_artifact_item(info)
 
+	if (rarity == ArtifactItem.Rarity.NORMAL):
+		return item
+
+	for artifact: ArtifactItem in artifacts:
+		if (artifact.info == info && artifact.rarity == rarity):
+			return artifact
+
+	var rarity_item: ArtifactItem = ArtifactItem.new()
+	rarity_item.info = info
+	rarity_item.stats = item.stats
+	rarity_item.rarity = rarity
+	artifacts.push_back(rarity_item)
+
+	return rarity_item
+
+func find_artifact_item(info: ArtifactInfo) -> ArtifactItem:
 	for artifact: ArtifactItem in artifacts:
 		if (artifact.info == info):
 			return artifact
@@ -98,7 +129,7 @@ func calculate_next_level_xp() -> int:
 	return (LEVEL_XP + level_increase) * additional_increase
 
 func apply_stats():
-	max_stamina = DEF_STAMINA
+	stamina = DEF_STAMINA
 	damage = DEF_DAMAGE
 
 	for upgrade_item: UpgradeItem in upgrades:
@@ -106,7 +137,7 @@ func apply_stats():
 
 		match (upgrade_item.upgrade.attribute):
 			Upgrade.Attribute.STAMINA:
-				max_stamina += improvement
+				stamina += improvement
 			Upgrade.Attribute.DAMAGE:
 				damage += improvement
 

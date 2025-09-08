@@ -16,3 +16,7 @@ class_name Level extends Resource
 @export var max_artifacts: int
 
 @export var artifacts: Array[ArtifactInfo]
+
+@export_category("Rewards")
+@export var finished_xp: int
+@export var completed_xp: int

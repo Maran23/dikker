@@ -78,28 +78,31 @@ func update_details(btn: InventoryButton):
 	current_btn = btn
 	current_artifact = btn.artifact
 
-	title_lbl.text = current_artifact.info.name
-	desc_lbl.text = current_artifact.info.description
 	image_rect.texture = current_artifact.info.image
+	image_rect.material = Game.get_rarity_shader_material(current_artifact.rarity)
+	title_lbl.text = current_artifact.info.name
+	title_lbl.add_theme_color_override(&"font_color", Game.get_rarity_color(current_artifact.rarity))
 
-	level_lbl.text = str(current_artifact.stats.level)
+	desc_lbl.text = current_artifact.info.description
+
+	level_lbl.text = Utils.fi(current_artifact.stats.level)
 	var next_level_xp: int = current_artifact.stats.calculate_next_xp(current_artifact.info.level_up_xp)
 	xp_bar.max_value = next_level_xp
 	xp_bar.value = current_artifact.stats.xp
 
-	xp_lbl.text = str(current_artifact.stats.xp) + " / " + str(next_level_xp)
+	xp_lbl.text = Utils.fi_slash(current_artifact.stats.xp, next_level_xp)
 
-	currency_lbl.text = str(current_artifact.get_value())
+	currency_lbl.text = Utils.fi(current_artifact.get_value())
 
 	update_artifact_details()
 
 func update_artifact_details():
-	var empty: bool = current_artifact == null || current_artifact.count == 0
-	sell_one_btn.disabled = empty
-	sell_25_btn.disabled = empty
-	sell_50_btn.disabled = empty
-	sell_all_btn.disabled = empty
+	#sell_one_btn.disabled = empty
+	#sell_25_btn.disabled = empty
+	#sell_50_btn.disabled = empty
+	#sell_all_btn.disabled = empty
 
+	var empty: bool = current_artifact == null || current_artifact.count == 0
 	if (empty):
 		side_panel_root.visible = false
 
@@ -110,5 +113,5 @@ func update_artifact_details():
 			back_btn.grab_focus()
 	else:
 		current_btn.update()
-		count_lbl.text = str(current_artifact.count) + "x"
+		count_lbl.text = Utils.fi(current_artifact.count) + "x"
 		side_panel_root.visible = true

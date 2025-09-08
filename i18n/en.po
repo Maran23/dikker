@@ -43,6 +43,12 @@ msgstr "Monkey Mask"
 msgid "mask_monkey_desc"
 msgstr "This mask seems to be influenced by monkeys"
 
+msgid "shield_lion"
+msgstr "Lion Shield"
+
+msgid "shield_lion_desc"
+msgstr "Old shield with a lion on it"
+
 # Level
 msgid "grass_level"
 msgstr "Grass"
@@ -63,9 +69,6 @@ msgstr "This Prestige"
 msgid "other"
 msgstr "Other"
 
-msgid "prestige"
-msgstr "Prestige"
-
 msgid "store"
 msgstr "Store"
 
@@ -83,6 +86,23 @@ msgstr "Upgrades"
 
 msgid "inventory"
 msgstr "Inventory"
+
+# Ingame UI Icons
+
+msgid "level"
+msgstr "Level"
+
+msgid "prestige"
+msgstr "Prestige"
+
+msgid "gems"
+msgstr "Gems"
+
+msgid "damage"
+msgstr "Damage"
+
+msgid "stamina"
+msgstr "Stamina"
 
 # Level UI
 msgid "level_select"

@@ -58,8 +58,7 @@ func show_level_ui():
 func restart_level():
 	var level: Level = Game.level
 
-	map.queue_free()
-	Game.level = null
+	end_game()
 
 	Game.level = level
 
@@ -73,7 +72,10 @@ func finish_level():
 	end_ui.visible = true
 
 func end_game_show_ingame_menu():
-	map.queue_free()
-	Game.level = null
+	end_game()
 
 	show_ingame_ui()
+
+func end_game():
+	map.queue_free()
+	Game.level = null

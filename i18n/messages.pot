@@ -40,6 +40,12 @@ msgstr ""
 msgid "mask_monkey_desc"
 msgstr ""
 
+msgid "shield_lion"
+msgstr ""
+
+msgid "shield_lion_desc"
+msgstr ""
+
 # Level
 
 msgid "grass_level"
@@ -81,6 +87,23 @@ msgid "upgrades"
 msgstr ""
 
 msgid "inventory"
+msgstr ""
+
+# Ingame UI Icons
+
+msgid "level"
+msgstr ""
+
+msgid "prestige"
+msgstr ""
+
+msgid "gems"
+msgstr ""
+
+msgid "damage"
+msgstr ""
+
+msgid "stamina"
 msgstr ""
 
 # Level UI

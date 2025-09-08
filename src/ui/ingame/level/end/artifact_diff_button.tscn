@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ctfpnolcgnsox"]
 
 [ext_resource type="Script" uid="uid://drf65cjjt7yf6" path="res://src/ui/ingame/level/end/artifact_diff_button.gd" id="1_y4wed"]
-[ext_resource type="Texture2D" uid="uid://dqpbl8qggjqqx" path="res://assets/map/artifact/ammonit.webp" id="2_put88"]
+[ext_resource type="Texture2D" uid="uid://blxevfy314vt0" path="res://assets/map/artifact/shield_lion.webp" id="2_y4wed"]
 [ext_resource type="Texture2D" uid="uid://dtayffjjwm2t2" path="res://assets/ui/currency/coin.webp" id="3_8yatw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4wed"]
@@ -23,9 +23,9 @@ border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
 [node name="ArtifactDiffButton" type="Button"]
-custom_minimum_size = Vector2(256, 256)
+custom_minimum_size = Vector2(312, 312)
 offset_right = 312.0
-offset_bottom = 294.0
+offset_bottom = 312.0
 focus_mode = 0
 theme_override_styles/disabled = SubResource("StyleBoxFlat_y4wed")
 disabled = true
@@ -52,7 +52,7 @@ theme_override_constants/separation = 5
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("2_put88")
+texture = ExtResource("2_y4wed")
 stretch_mode = 3
 
 [node name="NameLbl" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -70,7 +70,7 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.78, 0.64415, 0.039, 1)
-text = "1x"
+text = "999x"
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
@@ -81,7 +81,7 @@ text = ">"
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.517647, 0.788235, 0.466667, 1)
-text = "3x"
+text = "999x"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -100,20 +100,18 @@ alignment = 1
 
 [node name="LevelPrevLbl" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/HBoxContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
-text = "0"
+text = "999"
 
 [node name="LevelArrowLbl" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/HBoxContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 text = ">"
 
 [node name="LevelLbl" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "0"
+text = "999"
 
 [node name="XpBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
@@ -132,7 +130,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "0 / 0"
+text = "999 / 999"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -166,4 +164,4 @@ text = ">"
 [node name="CurrencyLbl" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "0"
+text = "999"

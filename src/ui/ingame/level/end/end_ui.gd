@@ -16,8 +16,13 @@ func _ready() -> void:
 	header.text = header.text.format({"finished" : tr("finished")})
 
 func on_menu_visible():
-	continue_btn.grab_focus()
+	restart_btn.grab_focus()
 	level_lbl.remove_theme_color_override(&"font_color")
+
+	if (Game.is_completed):
+		header.add_theme_color_override(&"default_color", Game.GREEN)
+	else:
+		header.remove_theme_color_override(&"default_color")
 
 	for child: Node in artifact_list.get_children():
 		child.free()
@@ -37,31 +42,39 @@ func on_menu_visible():
 	var prev_level: int = Player.level
 	var next_level_xp: int = Player.calculate_next_level_xp()
 
-	level_lbl.text = str(Player.level)
+	level_lbl.text = Utils.fi(Player.level)
 	xp_bar.max_value = next_level_xp
 	xp_bar.value = Player.xp
 
-	Player.xp += Game.artifacts.size()
+	var gained_xp: int = 0
+	for artifact: ArtifactItem in Game.artifacts:
+		gained_xp += artifact.get_xp_gain()
+
+	if (Game.is_completed):
+		gained_xp += Game.level.completed_xp
+	else:
+		gained_xp += Game.level.finished_xp
+	Player.xp += gained_xp
 
 	if (Player.level > prev_level):
-		xp_lbl.text = str(next_level_xp) + " / " + str(next_level_xp)
+		xp_lbl.text = Utils.fi_slash(next_level_xp, next_level_xp)
 
 		var tween: Tween = create_tween()
 		tween.tween_property(xp_bar, ^"value", next_level_xp, 1)
 		tween.tween_callback(update_level)
 	else:
-		xp_lbl.text = str(Player.xp) + " / " + str(next_level_xp)
+		xp_lbl.text = Utils.fi_slash(Player.xp, next_level_xp)
 
 		var tween: Tween = create_tween()
 		tween.tween_property(xp_bar, ^"value", Player.xp,1)
 
 func update_level():
-	level_lbl.add_theme_color_override(&"font_color", Color.html("#84c977"))
+	level_lbl.add_theme_color_override(&"font_color", Game.GREEN)
 
 	var next_level_xp: int = Player.calculate_next_level_xp()
-	xp_lbl.text = str(Player.xp) + " / " + str(next_level_xp)
+	xp_lbl.text = Utils.fi_slash(Player.xp, next_level_xp)
 
-	level_lbl.text = str(Player.level)
+	level_lbl.text = Utils.fi(Player.level)
 
 	xp_bar.max_value = next_level_xp
 	xp_bar.value = 0

@@ -18,33 +18,35 @@ func set_item(new_item: ArtifactItem):
 	flip_v = Utils.random_boolean()
 
 	if (Utils.random_boolean()):
-		fill_size = Vector2i(texture.get_height() / 64, texture.get_width() / 64)
+		fill_size = Vector2i(texture.get_height() / 64.0, texture.get_width() / 64.0)
 
 		rotation_degrees = 90
 		scale.y = -1
 	else:
-		fill_size = Vector2i(texture.get_width() / 64, texture.get_height() / 64)
+		fill_size = Vector2i(texture.get_width() / 64.0, texture.get_height() / 64.0)
 
 	fill_count = fill_size.x * fill_size.y
 
-func block_dug():
+func cover_up():
 	fill_count -= 1
 
-	if (fill_count == 0):
-		Game.add_artifact(item)
+	if (fill_count != 0):
+		return
 
-		var stars: GPUParticles2D = STAR_PARTICLES.instantiate()
-		stars.amount = fill_size.x * fill_size.y * 8
-		var mat: ParticleProcessMaterial = stars.process_material
+	Game.add_artifact(item)
 
-		var emission_extents: Vector2 = texture.get_size() / 2 - TRESHOLD
-		mat.emission_box_extents = Vector3(emission_extents.x, emission_extents.y, 1)
+	var stars: GPUParticles2D = STAR_PARTICLES.instantiate()
+	stars.amount = fill_size.x * fill_size.y * 8
+	var mat: ParticleProcessMaterial = stars.process_material
 
-		stars.position = texture.get_size() / 2
-		add_child(stars)
+	var emission_extents: Vector2 = texture.get_size() / 2 - TRESHOLD
+	mat.emission_box_extents = Vector3(emission_extents.x, emission_extents.y, 1)
+
+	stars.position = texture.get_size() / 2
+	add_child(stars)
 
 func get_block_fill_size() -> Vector2i:
 	return fill_size
 
-func is_dug_up() -> bool:
-	return fill_count == 0
+func is_covered() -> bool:
+	return fill_count != 0

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Data" load_steps=42 format=3 uid="uid://ccd5tqi2itbot"]
+[gd_resource type="Resource" script_class="Data" load_steps=48 format=3 uid="uid://ccd5tqi2itbot"]
 
 [ext_resource type="Script" uid="uid://bp2or3y2rt5gs" path="res://data/level/level.gd" id="1_8kyea"]
 [ext_resource type="Script" uid="uid://n4jum6dwqx2j" path="res://data/artifact/artifact_info.gd" id="2_8kyea"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dqpbl8qggjqqx" path="res://assets/map/artifact/ammonit.webp" id="6_ttcv8"]
 [ext_resource type="Texture2D" uid="uid://slbkdmbns8q" path="res://assets/map/artifact/mask_monkey.webp" id="7_j286e"]
 [ext_resource type="Texture2D" uid="uid://bd7731an8hsn3" path="res://assets/map/level/grass/grass1.webp" id="7_kityl"]
+[ext_resource type="Texture2D" uid="uid://blxevfy314vt0" path="res://assets/map/artifact/shield_lion.webp" id="8_o1wax"]
 [ext_resource type="Texture2D" uid="uid://bum1i5dk4n5g7" path="res://assets/map/level/grass/grass2.webp" id="8_siy3q"]
 [ext_resource type="Texture2D" uid="uid://eg02b2ekby2u" path="res://assets/map/level/grass/grass3.webp" id="9_o1wax"]
 [ext_resource type="Texture2D" uid="uid://ckg6hxfe1bapf" path="res://assets/map/level/grass/grass_level.webp" id="10_xphq4"]
@@ -75,6 +76,15 @@ value = 20
 level_up_xp = 2
 metadata/_custom_type_script = "uid://n4jum6dwqx2j"
 
+[sub_resource type="Resource" id="Resource_wtc8a"]
+script = ExtResource("2_8kyea")
+name = "shield_lion"
+description = "shield_lion_desc"
+image = ExtResource("8_o1wax")
+value = 25
+level_up_xp = 3
+metadata/_custom_type_script = "uid://n4jum6dwqx2j"
+
 [sub_resource type="Resource" id="Resource_vu40f"]
 script = ExtResource("1_8kyea")
 name = "grass_level"
@@ -87,8 +97,19 @@ block_columns = 8
 block_rows = 8
 min_artifacts = 3
 max_artifacts = 6
-artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5")])
+artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5"), SubResource("Resource_wtc8a")])
+finished_xp = 1
+completed_xp = 2
 metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
+
+[sub_resource type="Resource" id="Resource_wbxeb"]
+script = ExtResource("2_8kyea")
+name = "shield_lion"
+description = "shield_lion_desc"
+image = ExtResource("8_o1wax")
+value = 25
+level_up_xp = 3
+metadata/_custom_type_script = "uid://n4jum6dwqx2j"
 
 [sub_resource type="Resource" id="Resource_1h35d"]
 script = ExtResource("1_8kyea")
@@ -102,8 +123,19 @@ block_columns = 9
 block_rows = 9
 min_artifacts = 4
 max_artifacts = 7
-artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5")])
+artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5"), SubResource("Resource_wbxeb")])
+finished_xp = 2
+completed_xp = 4
 metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
+
+[sub_resource type="Resource" id="Resource_r78st"]
+script = ExtResource("2_8kyea")
+name = "shield_lion"
+description = "shield_lion_desc"
+image = ExtResource("8_o1wax")
+value = 25
+level_up_xp = 3
+metadata/_custom_type_script = "uid://n4jum6dwqx2j"
 
 [sub_resource type="Resource" id="Resource_o3r0c"]
 script = ExtResource("1_8kyea")
@@ -117,7 +149,9 @@ block_columns = 10
 block_rows = 10
 min_artifacts = 5
 max_artifacts = 10
-artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5")])
+artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5"), SubResource("Resource_r78st")])
+finished_xp = 3
+completed_xp = 6
 metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
 
 [sub_resource type="Resource" id="Resource_kityl"]
@@ -168,8 +202,32 @@ cost = 1000
 level_requirement = 11
 metadata/_custom_type_script = "uid://cs7k5sc862itr"
 
+[sub_resource type="Resource" id="Resource_v7t4x"]
+script = ExtResource("27_ttcv8")
+title = "stamina_up3"
+image = ExtResource("28_siy3q")
+cap = 5
+attribute = 0
+improvement = 1.0
+improvement_type = 0
+cost = 500
+level_requirement = 12
+metadata/_custom_type_script = "uid://cs7k5sc862itr"
+
+[sub_resource type="Resource" id="Resource_4wd7x"]
+script = ExtResource("27_ttcv8")
+title = "damage_up3"
+image = ExtResource("29_o1wax")
+cap = 1
+attribute = 1
+improvement = 1.0
+improvement_type = 0
+cost = 1500
+level_requirement = 13
+metadata/_custom_type_script = "uid://cs7k5sc862itr"
+
 [resource]
 script = ExtResource("2_h2d3w")
 levels = Array[ExtResource("1_8kyea")]([SubResource("Resource_vu40f"), SubResource("Resource_1h35d"), SubResource("Resource_o3r0c")])
-upgrades = Array[ExtResource("27_ttcv8")]([SubResource("Resource_kityl"), SubResource("Resource_siy3q"), SubResource("Resource_o1wax"), SubResource("Resource_xphq4")])
+upgrades = Array[ExtResource("27_ttcv8")]([SubResource("Resource_kityl"), SubResource("Resource_siy3q"), SubResource("Resource_o1wax"), SubResource("Resource_xphq4"), SubResource("Resource_v7t4x"), SubResource("Resource_4wd7x")])
 metadata/_custom_type_script = "uid://ck7xbm8va0wlh"

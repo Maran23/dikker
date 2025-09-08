@@ -15,7 +15,9 @@ func set_artifact(new_artifact: ArtifactItem):
 
 func update():
 	image_rect.texture = artifact.info.image
+	image_rect.material = Game.get_rarity_shader_material(artifact.rarity)
 	name_lbl.text = artifact.info.name
+	name_lbl.add_theme_color_override(&"font_color", Game.get_rarity_color(artifact.rarity))
 
-	count_lbl.text = str(artifact.count) + "x"
-	currency_lbl.text = str(artifact.get_value())
+	count_lbl.text = Utils.fi(artifact.count) + "x"
+	currency_lbl.text = Utils.fi(artifact.get_value())

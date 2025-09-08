@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dtayffjjwm2t2" path="res://assets/ui/currency/coin.webp" id="2_tj2qi"]
 
 [node name="UpgradeBtn" type="Button"]
-custom_minimum_size = Vector2(512, 128)
+custom_minimum_size = Vector2(640, 152)
 offset_right = 512.0
 offset_bottom = 128.0
 script = ExtResource("1_tj2qi")
@@ -91,4 +91,12 @@ stretch_mode = 5
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
-text = "50000"
+text = "999"
+
+[node name="InfoLabel" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+text = "dsdfdfsdfsdff"
+horizontal_alignment = 1
+vertical_alignment = 1

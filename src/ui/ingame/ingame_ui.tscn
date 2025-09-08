@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cxd7o0igf2h0q"]
+[gd_scene load_steps=17 format=3 uid="uid://cxd7o0igf2h0q"]
 
 [ext_resource type="Script" uid="uid://dk8q475e3baxq" path="res://src/ui/ingame/ingame_ui.gd" id="1_f8ije"]
 [ext_resource type="PackedScene" uid="uid://lgd2g38edtud" path="res://src/ui/components/border_panel_container.tscn" id="2_kfvuw"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://c4cqqsbca4c05" path="res://assets/ui/currency/gem.webp" id="6_kfvuw"]
 [ext_resource type="Texture2D" uid="uid://dpf5uoam7nte0" path="res://assets/ui/icon/ingame/collection.webp" id="6_xvytg"]
 [ext_resource type="PackedScene" uid="uid://bh0lr4k51hi6o" path="res://src/ui/ingame/section_vbox.tscn" id="7_rm1f2"]
+[ext_resource type="Texture2D" uid="uid://dnhbrt41dpys3" path="res://assets/ui/icon/upgrade/damage.webp" id="9_5nqb0"]
+[ext_resource type="Texture2D" uid="uid://7nebalrcffx4" path="res://assets/ui/icon/upgrade/stamina.webp" id="10_eur1o"]
 [ext_resource type="Texture2D" uid="uid://hcllaf87bde8" path="res://assets/ui/icon/ingame/inventory.webp" id="12_kfvuw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfvuw"]
@@ -51,22 +53,23 @@ layout_mode = 2
 [node name="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer" index="0"]
 text = "permanent"
 
-[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer" index="1"]
+[node name="LevelXpContainer" type="PanelContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer" index="1"]
 layout_mode = 2
+tooltip_text = "level"
 theme_override_styles/panel = ExtResource("4_mcd4b")
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/LevelXpContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/LevelXpContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="LevelLbl" type="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="LevelLbl" type="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/LevelXpContainer/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
@@ -77,7 +80,7 @@ text = "999"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="XpBar" type="ProgressBar" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
+[node name="XpBar" type="ProgressBar" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/LevelXpContainer/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
@@ -85,7 +88,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 show_percentage = false
 
-[node name="XpLbl" type="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/HBoxContainer/XpBar"]
+[node name="XpLbl" type="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/LevelXpContainer/MarginContainer/HBoxContainer/XpBar"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -98,22 +101,24 @@ text = "0 / 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ValueContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer" index="2" instance=ExtResource("3_sfhn3")]
+[node name="PrestigeValueContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer" index="2" instance=ExtResource("3_sfhn3")]
 layout_mode = 2
+title = "prestige"
 
-[node name="TextureRect" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer/MarginContainer/HBoxContainer" index="0"]
+[node name="ImageRect" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PrestigeValueContainer/MarginContainer/HBoxContainer" index="0"]
 texture = ExtResource("4_rm1f2")
 
-[node name="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer/MarginContainer/HBoxContainer" index="1"]
+[node name="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PrestigeValueContainer/MarginContainer/HBoxContainer" index="1"]
 text = "0"
 
-[node name="ValueContainer3" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer" index="3" instance=ExtResource("3_sfhn3")]
+[node name="GemsValueContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer" index="3" instance=ExtResource("3_sfhn3")]
 layout_mode = 2
+title = "gems"
 
-[node name="TextureRect" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer3/MarginContainer/HBoxContainer" index="0"]
+[node name="ImageRect" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/GemsValueContainer/MarginContainer/HBoxContainer" index="0"]
 texture = ExtResource("6_kfvuw")
 
-[node name="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer3/MarginContainer/HBoxContainer" index="1"]
+[node name="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/GemsValueContainer/MarginContainer/HBoxContainer" index="1"]
 text = "0"
 
 [node name="SectionVBox2" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("7_rm1f2")]
@@ -125,11 +130,34 @@ text = "this_prestige"
 [node name="CoinValueContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer" index="1" instance=ExtResource("3_sfhn3")]
 unique_name_in_owner = true
 layout_mode = 2
+title = "coins"
 
-[node name="TextureRect" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/CoinValueContainer/MarginContainer/HBoxContainer" index="0"]
+[node name="ImageRect" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/CoinValueContainer/MarginContainer/HBoxContainer" index="0"]
 texture = ExtResource("5_mcd4b")
 
 [node name="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/CoinValueContainer/MarginContainer/HBoxContainer" index="1"]
+text = "0"
+
+[node name="DamageValueContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer" index="2" instance=ExtResource("3_sfhn3")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "damage"
+
+[node name="ImageRect" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/DamageValueContainer/MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("9_5nqb0")
+
+[node name="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/DamageValueContainer/MarginContainer/HBoxContainer" index="1"]
+text = "0"
+
+[node name="StaminaValueContainer" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer" index="3" instance=ExtResource("3_sfhn3")]
+unique_name_in_owner = true
+layout_mode = 2
+title = "stamina"
+
+[node name="ImageRect" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/StaminaValueContainer/MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("10_eur1o")
+
+[node name="Label" parent="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/StaminaValueContainer/MarginContainer/HBoxContainer" index="1"]
 text = "0"
 
 [node name="ButtonsPanel" parent="HBoxContainer" instance=ExtResource("2_kfvuw")]
@@ -200,10 +228,12 @@ text = "other"
 
 [editable path="HBoxContainer/CurrencyPanel"]
 [editable path="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox"]
-[editable path="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer"]
-[editable path="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/ValueContainer3"]
+[editable path="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/PrestigeValueContainer"]
+[editable path="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox/MarginContainer/VBoxContainer/GemsValueContainer"]
 [editable path="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2"]
 [editable path="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/CoinValueContainer"]
+[editable path="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/DamageValueContainer"]
+[editable path="HBoxContainer/CurrencyPanel/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/SectionVBox2/MarginContainer/VBoxContainer/StaminaValueContainer"]
 [editable path="HBoxContainer/ButtonsPanel"]
 [editable path="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection"]
 [editable path="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection"]

@@ -4,7 +4,7 @@ const INCREASE_RATE: int = 5
 const ADDITIONAL_MULTIPLIER: float = 1.2
 
 enum Rarity {
-	NORMAL, RARE
+	NORMAL, RARE, EPIC, LEGENDARY, MYTHIC
 }
 
 @export var rarity: Rarity = Rarity.NORMAL
@@ -24,13 +24,21 @@ func get_value() -> int:
 	var level_increase: float = INCREASE_RATE * (stats.level - 1)
 	return (info.value + level_increase + additional_increase) * get_rarity_multiplier()
 
+func get_xp_gain() -> int:
+	return get_rarity_multiplier()
+
 func get_rarity_multiplier() -> int:
 	match (rarity):
 		Rarity.NORMAL:
 			return 1
 		Rarity.RARE:
 			return 2
-
+		Rarity.EPIC:
+			return 3
+		Rarity.LEGENDARY:
+			return 4
+		Rarity.MYTHIC:
+			return 10
 	return 0
 
 func _get_property_list() -> Array[Dictionary]:

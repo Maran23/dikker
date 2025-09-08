@@ -19,32 +19,35 @@ var artifact: ArtifactItem : set = set_artifact
 
 func _ready() -> void:
 	image_rect.texture = artifact.info.image
+	image_rect.material = Game.get_rarity_shader_material(artifact.rarity)
 	name_lbl.text = artifact.info.name
+	name_lbl.add_theme_color_override(&"font_color", Game.get_rarity_color(artifact.rarity))
 
-	count_lbl.text = str(artifact.count) + "x"
-	level_lbl.text = str(artifact.stats.level)
-	currency_lbl.text = str(artifact.get_value())
+	count_lbl.text = Utils.fi(artifact.count) + "x"
+	level_lbl.text = Utils.fi(artifact.stats.level)
+	currency_lbl.text = Utils.fi(artifact.get_value())
 
 	var prev_stats: Game.ArtifactPrevStats = Game.artifact_to_prev_stats[artifact]
-	count_prev_lbl.text = str(prev_stats.count) + "x"
+	count_prev_lbl.text = Utils.fi(prev_stats.count) + "x"
 
-	if (artifact.stats.level > prev_stats.level):
-		level_arrow_lbl.visible = true
-		currency_arrow_lbl.visible = true
-		level_prev_lbl.visible = true
-		currency_prev_lbl.visible = true
+	var level_up: bool = artifact.stats.level > prev_stats.level
+	level_arrow_lbl.visible = level_up
+	currency_arrow_lbl.visible = level_up
+	level_prev_lbl.visible = level_up
+	currency_prev_lbl.visible = level_up
 
-		level_prev_lbl.text = str(prev_stats.level)
-		currency_prev_lbl.text = str(prev_stats.value)
+	if (level_up):
+		level_prev_lbl.text = Utils.fi(prev_stats.level)
+		currency_prev_lbl.text = Utils.fi(prev_stats.value)
 
-		level_lbl.add_theme_color_override(&"font_color", Color.html("#84c977"))
-		currency_lbl.add_theme_color_override(&"font_color", Color.html("#84c977"))
+		level_lbl.add_theme_color_override(&"font_color", Game.GREEN)
+		currency_lbl.add_theme_color_override(&"font_color", Game.GREEN)
 
 		var next_level_xp: int = artifact.stats.calculate_level_xp(prev_stats.level, artifact.info.level_up_xp)
 		xp_bar.max_value = next_level_xp
 		xp_bar.value = prev_stats.xp
 
-		xp_lbl.text = str(next_level_xp) + " / " + str(next_level_xp)
+		xp_lbl.text = Utils.fi_slash(next_level_xp, next_level_xp)
 
 		var tween: Tween = create_tween()
 		tween.tween_property(xp_bar, ^"value",next_level_xp, 1)
@@ -57,7 +60,7 @@ func update_level_xp(start_xp: int):
 	xp_bar.max_value = next_level_xp
 	xp_bar.value = start_xp
 
-	xp_lbl.text = str(artifact.stats.xp) + " / " + str(next_level_xp)
+	xp_lbl.text = Utils.fi_slash(artifact.stats.xp, next_level_xp)
 
 	var tween: Tween = create_tween()
 	tween.tween_property(xp_bar, ^"value", artifact.stats.xp, 1)
