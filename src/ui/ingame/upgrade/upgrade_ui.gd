@@ -35,11 +35,4 @@ func buy(btn: UpgradeButton):
 	Player.coins -= cost
 	Player.add_upgrade(upgrade)
 
-	if (upgrade.is_maxed()):
-		upgrade_container.remove_child(btn)
-		btn.queue_free()
-
-		back_btn.grab_focus()
-		return
-
-	btn.update()
+	rebuild_upgrades.call_deferred()

@@ -36,18 +36,14 @@ size_flags_vertical = 3
 texture = ExtResource("2_xif1x")
 stretch_mode = 3
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="CountLbl" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="CountLbl" type="Label" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.925781, 0.43396, 0, 1)
 text = "1x"
 horizontal_alignment = 1
 
-[node name="NameLbl" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+[node name="NameLbl" type="Label" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "knife_fire"

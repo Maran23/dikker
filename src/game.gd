@@ -10,12 +10,15 @@ signal level_finished
 
 signal stamina_changed
 
+@onready var uncovered_player: AudioStreamPlayer = $UncoveredPlayer
+@onready var uncovered_special_player: AudioStreamPlayer = $UncoveredSpecialPlayer
+@onready var dig_sound_player: AudioStreamPlayer = $DigSoundPlayer
+
 var data: Data = preload("res://data/data.tres")
 
 var level: Level : set = set_level
 
 var artifacts: Array[ArtifactItem] = []
-var artifact_to_prev_stats: Dictionary[ArtifactItem, ArtifactPrevStats] = {}
 var is_completed: bool
 
 var stamina: int : set = set_stamina
@@ -29,8 +32,20 @@ func set_stamina(new_stamina: int):
 		finish_level()
 		Player.save()
 
-func add_artifact(artifact: ArtifactItem):
+func collect_artifact(artifact: ArtifactItem):
 	artifacts.push_back(artifact)
+
+	uncovered_player.pitch_scale = Utils.random_float(0.9, 1.1)
+	uncovered_player.play()
+
+	if (artifact.is_special()):
+		uncovered_special_player.play()
+
+func reduce_stamina(amount: int):
+	stamina -= 1
+
+	dig_sound_player.pitch_scale = Utils.random_float(0.9, 1.1)
+	dig_sound_player.play()
 
 func set_level(new_level: Level):
 	level = new_level
@@ -42,7 +57,6 @@ func set_level(new_level: Level):
 
 func reset():
 	artifacts.clear()
-	artifact_to_prev_stats.clear()
 	is_completed = false
 	stamina = Player.stamina
 
@@ -54,13 +68,6 @@ func complete_level():
 	finish_level()
 
 func finish_level():
-	for artifact: ArtifactItem in artifacts:
-		if (!artifact_to_prev_stats.has(artifact)):
-			artifact_to_prev_stats[artifact] = ArtifactPrevStats.of(artifact)
-
-		artifact.count += 1
-		artifact.add_xp(1)
-
 	level_finished.emit()
 
 func get_rarity_shader_material(rarity: ArtifactItem.Rarity) -> ShaderMaterial:
@@ -71,7 +78,7 @@ func get_rarity_shader_material(rarity: ArtifactItem.Rarity) -> ShaderMaterial:
 	material.shader = SHINE
 
 	var color: Color = get_rarity_color(rarity)
-	color.a = 0.3921
+	color.a = 0.4
 
 	material.set_shader_parameter(&"shine_color", color)
 
@@ -93,18 +100,3 @@ func get_rarity_color(rarity: ArtifactItem.Rarity) -> Color:
 			color = Color.html("#ff3c3c")
 
 	return color
-
-class ArtifactPrevStats:
-	var xp: int
-	var level: int
-	var value: int
-	var count: int
-
-	static func of(artifact: ArtifactItem) -> ArtifactPrevStats:
-		var stats: ArtifactPrevStats = ArtifactPrevStats.new()
-		stats.xp = artifact.stats.xp
-		stats.level = artifact.stats.level
-		stats.value = artifact.get_value()
-		stats.count = artifact.count
-
-		return stats

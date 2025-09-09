@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://3wh2drr068hv"]
+[gd_scene load_steps=4 format=3 uid="uid://3wh2drr068hv"]
 
 [ext_resource type="Texture2D" uid="uid://b2p87o35fysep" path="res://assets/map/particle/fragment.webp" id="1_p1any"]
 [ext_resource type="Script" uid="uid://bx0i143bqec55" path="res://src/map/particles/one_shot_particles.gd" id="2_xdvdj"]
-[ext_resource type="AudioStream" uid="uid://bgu7iuauhf2wv" path="res://assets/map/effect/dig.ogg" id="3_p1any"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_eluam"]
 particle_flag_disable_z = true
@@ -29,8 +28,3 @@ explosiveness = 0.98
 visibility_rect = Rect2(-454.903, -162.364, 917.004, 3983.86)
 process_material = SubResource("ParticleProcessMaterial_eluam")
 script = ExtResource("2_xdvdj")
-
-[node name="DigSoundPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_p1any")
-autoplay = true
-bus = &"Sound"

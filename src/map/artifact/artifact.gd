@@ -33,8 +33,17 @@ func cover_up():
 	if (fill_count != 0):
 		return
 
-	Game.add_artifact(item)
+	Game.collect_artifact(item)
 
+	var stars: GPUParticles2D = create_stars_particles()
+	add_child(stars)
+
+	if (item.is_special()):
+		var special_stars: GPUParticles2D = create_stars_particles()
+		special_stars.self_modulate = Game.get_rarity_color(item.rarity)
+		add_child(special_stars)
+
+func create_stars_particles() -> GPUParticles2D:
 	var stars: GPUParticles2D = STAR_PARTICLES.instantiate()
 	stars.amount = fill_size.x * fill_size.y * 8
 	var mat: ParticleProcessMaterial = stars.process_material
@@ -43,7 +52,8 @@ func cover_up():
 	mat.emission_box_extents = Vector3(emission_extents.x, emission_extents.y, 1)
 
 	stars.position = texture.get_size() / 2
-	add_child(stars)
+
+	return stars
 
 func get_block_fill_size() -> Vector2i:
 	return fill_size

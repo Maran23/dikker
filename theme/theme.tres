@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dxmrs1ky0io2i"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://dxmrs1ky0io2i"]
 
 [ext_resource type="FontVariation" uid="uid://bger5sa13st71" path="res://theme/font.tres" id="1_p702s"]
 
@@ -57,6 +57,18 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ab6e"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.21, 0.21, 0.21, 0.752941)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.11, 0.11, 0.11, 0.752941)
+
 [resource]
 default_font = ExtResource("1_p702s")
 default_font_size = 32
@@ -72,3 +84,6 @@ Label/constants/outline_size = 4
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_xamod")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_834jt")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_p702s")
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/constants/outline_size = 4
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_8ab6e")

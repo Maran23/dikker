@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cflvpxabt1mhw"]
+[gd_scene load_steps=12 format=3 uid="uid://cflvpxabt1mhw"]
 
 [ext_resource type="Script" uid="uid://bn6l13v38eiu1" path="res://src/map/map.gd" id="1_1a5qu"]
 [ext_resource type="PackedScene" uid="uid://opv1ovv245p8" path="res://src/map/block_map.tscn" id="1_5o7fj"]
 [ext_resource type="PackedScene" uid="uid://b5uc3wx23vryb" path="res://src/map/disabled_block.tscn" id="2_vfn15"]
+[ext_resource type="Script" uid="uid://bij7775fkh0st" path="res://src/map/controllable_camera.gd" id="4_4cvdr"]
 [ext_resource type="Texture2D" uid="uid://d1kmn3ecav6tl" path="res://assets/map/effect/point_light.webp" id="4_wb0hv"]
 [ext_resource type="Shader" uid="uid://tw4u6x04yuq2" path="res://src/map/fog.gdshader" id="5_fr2qc"]
 
@@ -41,7 +42,8 @@ texture_repeat = 2
 [node name="BlockMap" parent="." instance=ExtResource("1_5o7fj")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
+offset = Vector2(960, 540)
+script = ExtResource("4_4cvdr")
 
 [node name="NightNode" type="Node2D" parent="."]
 visible = false

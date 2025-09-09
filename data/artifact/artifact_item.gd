@@ -41,6 +41,12 @@ func get_rarity_multiplier() -> int:
 			return 10
 	return 0
 
+func is_special() -> bool:
+	return rarity != Rarity.NORMAL
+
+func calculate_next_level_xp() -> int:
+	return stats.calculate_next_level_xp(info.level_up_xp)
+
 func _get_property_list() -> Array[Dictionary]:
 	var properties: Array[Dictionary] = []
 	properties.append({

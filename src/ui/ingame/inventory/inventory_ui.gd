@@ -86,7 +86,7 @@ func update_details(btn: InventoryButton):
 	desc_lbl.text = current_artifact.info.description
 
 	level_lbl.text = Utils.fi(current_artifact.stats.level)
-	var next_level_xp: int = current_artifact.stats.calculate_next_xp(current_artifact.info.level_up_xp)
+	var next_level_xp: int = current_artifact.calculate_next_level_xp()
 	xp_bar.max_value = next_level_xp
 	xp_bar.value = current_artifact.stats.xp
 

@@ -31,6 +31,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 
 	if (event.is_action_pressed(&"dig") && get_rect().has_point(get_local_mouse_position())):
+		get_tree().root.set_input_as_handled()
+
 		var particles: GPUParticles2D = DIG_PARTICLES.instantiate()
 		particles.self_modulate = level.block_color
 
@@ -44,7 +46,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			show_crack()
 
-		Game.stamina -= 1
+		Game.reduce_stamina(1)
 
 func show_crack():
 	var down_percent: float = hp as float / max_hp as float

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Data" load_steps=48 format=3 uid="uid://ccd5tqi2itbot"]
+[gd_resource type="Resource" script_class="Data" load_steps=46 format=3 uid="uid://ccd5tqi2itbot"]
 
 [ext_resource type="Script" uid="uid://bp2or3y2rt5gs" path="res://data/level/level.gd" id="1_8kyea"]
 [ext_resource type="Script" uid="uid://n4jum6dwqx2j" path="res://data/artifact/artifact_info.gd" id="2_8kyea"]
@@ -102,15 +102,6 @@ finished_xp = 1
 completed_xp = 2
 metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
 
-[sub_resource type="Resource" id="Resource_wbxeb"]
-script = ExtResource("2_8kyea")
-name = "shield_lion"
-description = "shield_lion_desc"
-image = ExtResource("8_o1wax")
-value = 25
-level_up_xp = 3
-metadata/_custom_type_script = "uid://n4jum6dwqx2j"
-
 [sub_resource type="Resource" id="Resource_1h35d"]
 script = ExtResource("1_8kyea")
 name = "dirt_level"
@@ -123,19 +114,10 @@ block_columns = 9
 block_rows = 9
 min_artifacts = 4
 max_artifacts = 7
-artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5"), SubResource("Resource_wbxeb")])
+artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5"), SubResource("Resource_wtc8a")])
 finished_xp = 2
 completed_xp = 4
 metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
-
-[sub_resource type="Resource" id="Resource_r78st"]
-script = ExtResource("2_8kyea")
-name = "shield_lion"
-description = "shield_lion_desc"
-image = ExtResource("8_o1wax")
-value = 25
-level_up_xp = 3
-metadata/_custom_type_script = "uid://n4jum6dwqx2j"
 
 [sub_resource type="Resource" id="Resource_o3r0c"]
 script = ExtResource("1_8kyea")
@@ -149,7 +131,7 @@ block_columns = 10
 block_rows = 10
 min_artifacts = 5
 max_artifacts = 10
-artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5"), SubResource("Resource_r78st")])
+artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5"), SubResource("Resource_wtc8a")])
 finished_xp = 3
 completed_xp = 6
 metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
