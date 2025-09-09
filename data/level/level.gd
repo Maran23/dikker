@@ -20,3 +20,7 @@ class_name Level extends Resource
 @export_category("Rewards")
 @export var finished_xp: int
 @export var completed_xp: int
+
+@export_category("Sound")
+@export var ambient_music: AudioStream
+@export var dig_sound: AudioStream

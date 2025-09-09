@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Data" load_steps=51 format=3 uid="uid://ccd5tqi2itbot"]
+[gd_resource type="Resource" script_class="Data" load_steps=57 format=3 uid="uid://ccd5tqi2itbot"]
 
 [ext_resource type="Script" uid="uid://bp2or3y2rt5gs" path="res://data/level/level.gd" id="1_8kyea"]
 [ext_resource type="Script" uid="uid://n4jum6dwqx2j" path="res://data/artifact/artifact_info.gd" id="2_8kyea"]
@@ -16,8 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://duj2051vs1aek" path="res://assets/map/level/grass/grass4.webp" id="11_8kyea"]
 [ext_resource type="Texture2D" uid="uid://jmwxcgu6yxq0" path="res://assets/map/level/grass/top/flowers_top.webp" id="11_wtc8a"]
 [ext_resource type="Texture2D" uid="uid://hqm8wjckpafd" path="res://assets/map/level/dirt/dirt1.webp" id="13_r78st"]
+[ext_resource type="AudioStream" uid="uid://1lto3sevgnat" path="res://assets/map/effect/dig_grass.ogg" id="14_o6mkr"]
 [ext_resource type="Texture2D" uid="uid://da15dmr84248g" path="res://assets/map/level/dirt/dirt2.webp" id="14_v7t4x"]
 [ext_resource type="Texture2D" uid="uid://dwlgr86vqe7hl" path="res://assets/map/level/dirt/dirt3.webp" id="15_4wd7x"]
+[ext_resource type="AudioStream" uid="uid://bkkr6fi8b847y" path="res://assets/music/grass.mp3" id="15_ajvow"]
 [ext_resource type="Texture2D" uid="uid://dqm21fk5gjmuf" path="res://assets/map/level/grass/top/flowers_top2.webp" id="15_wbxeb"]
 [ext_resource type="Texture2D" uid="uid://d1d6cnl1p0tt6" path="res://assets/map/level/dirt/dirt_level.webp" id="16_sto4h"]
 [ext_resource type="Texture2D" uid="uid://bwhcvtgeq20eg" path="res://assets/map/level/dirt/top/grass_top.webp" id="17_ajvow"]
@@ -27,12 +29,16 @@
 [ext_resource type="Texture2D" uid="uid://b3y81nhwu334a" path="res://assets/map/level/stone/stone2.webp" id="20_eniho"]
 [ext_resource type="Texture2D" uid="uid://bo2tvmnpbfqa1" path="res://assets/map/level/stone/stone3.webp" id="21_lagmg"]
 [ext_resource type="Texture2D" uid="uid://cefrkkkke08rt" path="res://assets/map/level/stone/stone4.webp" id="22_1gv2p"]
+[ext_resource type="AudioStream" uid="uid://dncgfk7fd41mb" path="res://assets/music/dirt.mp3" id="23_o6mkr"]
 [ext_resource type="Texture2D" uid="uid://ctjod212gjxbv" path="res://assets/map/level/stone/stone_level.webp" id="23_s7gyx"]
+[ext_resource type="AudioStream" uid="uid://bgu7iuauhf2wv" path="res://assets/map/effect/dig_dirt.ogg" id="23_v176c"]
 [ext_resource type="Script" uid="uid://cs7k5sc862itr" path="res://data/upgrade/upgrade.gd" id="27_ttcv8"]
 [ext_resource type="Texture2D" uid="uid://bxqauilc02b8" path="res://assets/map/level/stone/top/surface.webp" id="27_wtc8a"]
 [ext_resource type="Texture2D" uid="uid://7nebalrcffx4" path="res://assets/ui/icon/upgrade/stamina.webp" id="28_siy3q"]
 [ext_resource type="Texture2D" uid="uid://c81uviebp6x2g" path="res://assets/map/level/stone/top/surface2.webp" id="28_wbxeb"]
 [ext_resource type="Texture2D" uid="uid://dnhbrt41dpys3" path="res://assets/ui/icon/upgrade/damage.webp" id="29_o1wax"]
+[ext_resource type="AudioStream" uid="uid://cqlml1r2sny3y" path="res://assets/map/effect/pick.ogg" id="31_ajvow"]
+[ext_resource type="AudioStream" uid="uid://bisb15swmnor8" path="res://assets/music/stone.mp3" id="31_v176c"]
 
 [sub_resource type="Resource" id="Resource_2uby0"]
 script = ExtResource("2_8kyea")
@@ -103,6 +109,8 @@ max_artifacts = 6
 artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5"), SubResource("Resource_wtc8a")])
 finished_xp = 1
 completed_xp = 2
+ambient_music = ExtResource("15_ajvow")
+dig_sound = ExtResource("14_o6mkr")
 metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
 
 [sub_resource type="Resource" id="Resource_1h35d"]
@@ -120,6 +128,8 @@ max_artifacts = 7
 artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5"), SubResource("Resource_wtc8a")])
 finished_xp = 2
 completed_xp = 4
+ambient_music = ExtResource("23_o6mkr")
+dig_sound = ExtResource("23_v176c")
 metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
 
 [sub_resource type="Resource" id="Resource_o3r0c"]
@@ -137,6 +147,8 @@ max_artifacts = 10
 artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5"), SubResource("Resource_wtc8a")])
 finished_xp = 3
 completed_xp = 6
+ambient_music = ExtResource("31_v176c")
+dig_sound = ExtResource("31_ajvow")
 metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
 
 [sub_resource type="Resource" id="Resource_kityl"]

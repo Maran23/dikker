@@ -56,11 +56,8 @@ func show_level_ui():
 	toggle_visible(level_select_ui)
 
 func restart_level():
-	var level: Level = Game.level
-
-	end_game()
-
-	Game.level = level
+	map.free()
+	Game.start_level()
 
 func start_level():
 	map = MAP_SCENE.instantiate()
@@ -77,5 +74,5 @@ func end_game_show_ingame_menu():
 	show_ingame_ui()
 
 func end_game():
-	map.queue_free()
+	map.free()
 	Game.level = null

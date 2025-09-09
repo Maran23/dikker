@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://byocq6ktrhk8f"]
+[gd_scene load_steps=4 format=3 uid="uid://byocq6ktrhk8f"]
 
 [ext_resource type="Script" uid="uid://rre4qe2fo2lt" path="res://src/game.gd" id="1_7uq6d"]
 [ext_resource type="AudioStream" uid="uid://rldj6qhjcmuo" path="res://assets/map/sound/uncovered.wav" id="2_3msxb"]
 [ext_resource type="AudioStream" uid="uid://ci6vcem0qx1ig" path="res://assets/map/sound/uncovered_special.wav" id="3_kc8ui"]
-[ext_resource type="AudioStream" uid="uid://bgu7iuauhf2wv" path="res://assets/map/effect/dig.ogg" id="3_xq6wo"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_7uq6d")
@@ -19,6 +18,9 @@ max_polyphony = 2
 bus = &"Sound"
 
 [node name="DigSoundPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_xq6wo")
 max_polyphony = 2
 bus = &"Sound"
+
+[node name="AmbientMusicPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 2
+bus = &"Music"
