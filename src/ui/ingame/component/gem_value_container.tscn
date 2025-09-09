@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6d4vb0xl3cb"]
+
+[ext_resource type="PackedScene" uid="uid://uk6ksjr1o1i0" path="res://src/ui/component/value_container.tscn" id="1_kel8g"]
+[ext_resource type="Texture2D" uid="uid://c4cqqsbca4c05" path="res://assets/ui/currency/gem.webp" id="2_1tauc"]
+[ext_resource type="Script" uid="uid://bgnprajpfsfr3" path="res://src/ui/ingame/component/gem_value_container.gd" id="2_r1ojf"]
+
+[node name="GemValueContainer" instance=ExtResource("1_kel8g")]
+script = ExtResource("2_r1ojf")
+title = "coins"
+
+[node name="ImageRect" parent="MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("2_1tauc")
+
+[node name="Label" parent="MarginContainer/HBoxContainer" index="1"]
+text = "0"

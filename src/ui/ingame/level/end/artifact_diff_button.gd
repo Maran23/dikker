@@ -15,6 +15,8 @@ class_name ArtifactDiffButton extends Button
 @onready var level_arrow_lbl: Label = %LevelArrowLbl
 @onready var currency_arrow_lbl: Label = %CurrencyArrowLbl
 
+@onready var level_up_artifact_player: AudioStreamPlayer = $LevelUpArtifactPlayer
+
 var artifact: ArtifactItem : set = set_artifact
 
 var prev_xp: int
@@ -61,9 +63,14 @@ func _ready() -> void:
 
 		var tween: Tween = create_tween()
 		tween.tween_property(xp_bar, ^"value", prev_level_up_xp, 1)
-		tween.tween_callback(update_level_xp.bind(0))
+		tween.tween_callback(update_level)
 	else:
 		update_level_xp(prev_xp)
+
+func update_level():
+	level_up_artifact_player.play()
+
+	update_level_xp(0)
 
 func update_xp_label():
 	var next_level_xp: int = artifact.calculate_next_level_xp()

@@ -6,19 +6,17 @@ const INVENTORY_BUTTON: PackedScene = preload("res://src/ui/ingame/inventory/inv
 @onready var back_btn: Button = %BackBtn
 @onready var side_panel_root: MarginContainer = %SidePanelRoot
 
-@onready var sell_one_btn: Button = %SellOneBtn
-@onready var sell_25_btn: Button = %Sell25PBtn
-@onready var sell_50_btn: Button = %Sell50PBtn
-@onready var sell_all_btn: Button = %SellAllBtn
+@onready var sell_one_btn: ValueButton = %SellOneBtn
+@onready var sell_all_btn: ValueButton = %SellAllBtn
 
 @onready var title_lbl: Label = %TitleLbl
 @onready var desc_lbl: Label = %DescLbl
 @onready var image_rect: TextureRect = %ImageRect
 @onready var count_lbl: Label = %CountLbl
-@onready var level_lbl: Label = %LevelLbl
-@onready var xp_bar: ProgressBar = %XpBar
-@onready var xp_lbl: Label = %XpLbl
 @onready var currency_lbl: Label = %CurrencyLbl
+@onready var level_xp_container: LevelXpContainer = %LevelXpContainer
+
+@onready var sell_all_artifacts_btn: ValueButton = %SellAllArtifactsBtn
 
 var current_btn: InventoryButton
 var current_artifact: ArtifactItem
@@ -28,18 +26,11 @@ func _ready() -> void:
 	side_panel_root.visible = false
 
 	sell_one_btn.pressed.connect(sell_one)
-	sell_25_btn.pressed.connect(sell_25p)
-	sell_50_btn.pressed.connect(sell_50p)
 	sell_all_btn.pressed.connect(sell_all)
+	sell_all_artifacts_btn.pressed.connect(sell_all_artifacts)
 
 func sell_one():
 	sell(1)
-
-func sell_25p():
-	sell(max(1, current_artifact.count * 0.25))
-
-func sell_50p():
-	sell(max(1, current_artifact.count * 0.5))
 
 func sell_all():
 	sell(current_artifact.count)
@@ -50,6 +41,17 @@ func sell(count: int):
 	Player.coins += count * current_artifact.get_value()
 
 	update_artifact_details()
+	update_sell_details()
+
+func sell_all_artifacts():
+	var coins: int = 0
+	for artifact: ArtifactItem in Player.artifacts:
+		coins += artifact.count * artifact.get_value()
+		artifact.count = 0
+
+	Player.coins += coins
+
+	rebuild_artifacts()
 
 func on_menu_visible() -> void:
 	rebuild_artifacts()
@@ -67,12 +69,13 @@ func rebuild_artifacts():
 			continue
 
 		var btn: InventoryButton = INVENTORY_BUTTON.instantiate()
-		btn.pressed.connect(update_details.bind(btn))
 		btn.set_artifact(artifact)
+		btn.pressed.connect(update_details.bind(btn))
 
 		artifacts_flow_container.add_child(btn)
 
 	update_artifact_details()
+	update_sell_details()
 
 func update_details(btn: InventoryButton):
 	current_btn = btn
@@ -85,23 +88,16 @@ func update_details(btn: InventoryButton):
 
 	desc_lbl.text = current_artifact.info.description
 
-	level_lbl.text = Utils.fi(current_artifact.stats.level)
+	level_xp_container.set_level(current_artifact.stats.level)
 	var next_level_xp: int = current_artifact.calculate_next_level_xp()
-	xp_bar.max_value = next_level_xp
-	xp_bar.value = current_artifact.stats.xp
-
-	xp_lbl.text = Utils.fi_slash(current_artifact.stats.xp, next_level_xp)
+	level_xp_container.set_xp(current_artifact.stats.xp, next_level_xp)
 
 	currency_lbl.text = Utils.fi(current_artifact.get_value())
 
 	update_artifact_details()
+	update_sell_details()
 
 func update_artifact_details():
-	#sell_one_btn.disabled = empty
-	#sell_25_btn.disabled = empty
-	#sell_50_btn.disabled = empty
-	#sell_all_btn.disabled = empty
-
 	var empty: bool = current_artifact == null || current_artifact.count == 0
 	if (empty):
 		side_panel_root.visible = false
@@ -110,8 +106,26 @@ func update_artifact_details():
 			artifacts_flow_container.remove_child(current_btn)
 			current_btn.queue_free()
 
+			current_artifact = null
+
 			back_btn.grab_focus()
 	else:
 		current_btn.update()
 		count_lbl.text = Utils.fi(current_artifact.count) + "x"
 		side_panel_root.visible = true
+
+func update_sell_details():
+	var coins: int = 0
+	for artifact: ArtifactItem in Player.artifacts:
+		if (artifact.count == 0):
+			continue
+
+		coins += artifact.count * artifact.get_value()
+
+	sell_all_artifacts_btn.set_value(coins)
+
+	if (current_artifact == null):
+		return
+
+	sell_one_btn.set_value(current_artifact.get_value())
+	sell_all_btn.set_value(current_artifact.count * current_artifact.get_value())

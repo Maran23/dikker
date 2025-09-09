@@ -7,6 +7,7 @@ const DEF_STAMINA: int = 10
 const DEF_DAMAGE: int = 1
 
 signal coins_changed
+signal gems_changed
 signal xp_changed
 signal level_changed
 
@@ -19,7 +20,7 @@ var level: int = 1 : set = set_level
 var xp: int : set = set_xp
 
 var coins: int : set = set_coins
-var gems: int
+var gems: int : set = set_gems
 
 var artifacts: Array[ArtifactItem] = []
 var upgrades: Array[UpgradeItem] = []
@@ -39,6 +40,13 @@ func set_coins(new_coins: int):
 	coins = new_coins
 
 	coins_changed.emit()
+
+	save()
+
+func set_gems(new_gems: int):
+	gems = new_gems
+
+	gems_changed.emit()
 
 	save()
 

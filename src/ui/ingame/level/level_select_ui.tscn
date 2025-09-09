@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqn1fthxlr67x"]
 
 [ext_resource type="Script" uid="uid://d0vcn61fdv2fv" path="res://src/ui/ingame/level/level_select_ui.gd" id="1_4stsy"]
-[ext_resource type="PackedScene" uid="uid://lgd2g38edtud" path="res://src/ui/components/border_panel_container.tscn" id="2_nt61w"]
+[ext_resource type="PackedScene" uid="uid://lgd2g38edtud" path="res://src/ui/component/border_panel_container.tscn" id="2_nt61w"]
 
 [node name="LevelSelectUi" type="CanvasLayer"]
 script = ExtResource("1_4stsy")

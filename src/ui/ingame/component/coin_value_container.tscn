@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbc5n0l2322gd"]
+
+[ext_resource type="PackedScene" uid="uid://uk6ksjr1o1i0" path="res://src/ui/component/value_container.tscn" id="1_oob04"]
+[ext_resource type="Script" uid="uid://b5q22a8klojpf" path="res://src/ui/ingame/component/coin_value_container.gd" id="2_0bmht"]
+[ext_resource type="Texture2D" uid="uid://dtayffjjwm2t2" path="res://assets/ui/currency/coin.webp" id="2_l6mro"]
+
+[node name="CoinValueContainer" instance=ExtResource("1_oob04")]
+script = ExtResource("2_0bmht")
+title = "coins"
+
+[node name="ImageRect" parent="MarginContainer/HBoxContainer" index="0"]
+texture = ExtResource("2_l6mro")
+
+[node name="Label" parent="MarginContainer/HBoxContainer" index="1"]
+text = "0"

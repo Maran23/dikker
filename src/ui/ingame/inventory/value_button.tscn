@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://3yfgh8je56mx"]
+
+[ext_resource type="Script" uid="uid://dfhgyrprf6cox" path="res://src/ui/ingame/inventory/value_button.gd" id="1_5sfx2"]
+[ext_resource type="Texture2D" uid="uid://dtayffjjwm2t2" path="res://assets/ui/currency/coin.webp" id="1_nt3ec"]
+
+[node name="ValueButton" type="Button"]
+custom_minimum_size = Vector2(320, 80)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1600.0
+offset_bottom = -1000.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5sfx2")
+
+[node name="ContentContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ContentContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TitleLbl" type="Label" parent="ContentContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "sell_all_artifacts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContentContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ImageRect" type="TextureRect" parent="ContentContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_nt3ec")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="ValueLbl" type="Label" parent="ContentContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1

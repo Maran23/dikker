@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://uk6ksjr1o1i0"]
 
 [ext_resource type="StyleBox" uid="uid://cpkdte5woiv0y" path="res://theme/dark_bg.tres" id="1_my1sj"]
-[ext_resource type="Script" uid="uid://dwrsu34tyy56w" path="res://src/ui/components/value_container.gd" id="2_my1sj"]
+[ext_resource type="Script" uid="uid://dwrsu34tyy56w" path="res://src/ui/component/value_container.gd" id="2_my1sj"]
 
 [node name="ValueContainer" type="PanelContainer"]
 custom_minimum_size = Vector2(128, 0)

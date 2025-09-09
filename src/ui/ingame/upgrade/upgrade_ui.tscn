@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://trg1ok3v7x5i"]
+[gd_scene load_steps=5 format=3 uid="uid://trg1ok3v7x5i"]
 
 [ext_resource type="Script" uid="uid://bjoolvgowluso" path="res://src/ui/ingame/upgrade/upgrade_ui.gd" id="1_nxpe2"]
-[ext_resource type="PackedScene" uid="uid://lgd2g38edtud" path="res://src/ui/components/border_panel_container.tscn" id="2_nxpe2"]
+[ext_resource type="PackedScene" uid="uid://lgd2g38edtud" path="res://src/ui/component/border_panel_container.tscn" id="2_nxpe2"]
+[ext_resource type="PackedScene" uid="uid://dbc5n0l2322gd" path="res://src/ui/ingame/component/coin_value_container.tscn" id="3_nxpe2"]
+[ext_resource type="Texture2D" uid="uid://c3xl566njkdtf" path="res://assets/ui/icon/ingame/arrow_up.webp" id="4_6ngta"]
 
 [node name="UpgradeUi" type="CanvasLayer"]
 script = ExtResource("1_nxpe2")
@@ -18,6 +20,31 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "upgrades"
 horizontal_alignment = 1
+
+[node name="BorderPanelContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_nxpe2")]
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CoinValueContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer" instance=ExtResource("3_nxpe2")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="BuyAllBtn" type="Button" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "buy_all"
+icon = ExtResource("4_6ngta")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -39,3 +66,4 @@ theme_override_font_sizes/font_size = 48
 text = "back"
 
 [editable path="BorderPanelContainer"]
+[editable path="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BorderPanelContainer"]

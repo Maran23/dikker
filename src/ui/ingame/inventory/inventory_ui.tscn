@@ -1,22 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhd20v1jgopp5"]
+[gd_scene load_steps=10 format=3 uid="uid://dhd20v1jgopp5"]
 
 [ext_resource type="Script" uid="uid://c4akx874f6f6g" path="res://src/ui/ingame/inventory/inventory_ui.gd" id="1_jrvep"]
-[ext_resource type="PackedScene" uid="uid://lgd2g38edtud" path="res://src/ui/components/border_panel_container.tscn" id="2_4htqt"]
+[ext_resource type="PackedScene" uid="uid://lgd2g38edtud" path="res://src/ui/component/border_panel_container.tscn" id="2_4htqt"]
 [ext_resource type="StyleBox" uid="uid://cpkdte5woiv0y" path="res://theme/dark_bg.tres" id="3_pd273"]
+[ext_resource type="PackedScene" uid="uid://d2htlbcx3auv5" path="res://src/ui/component/level_xp_container.tscn" id="4_2dase"]
 [ext_resource type="Texture2D" uid="uid://dtayffjjwm2t2" path="res://assets/ui/currency/coin.webp" id="4_xtemm"]
 [ext_resource type="StyleBox" uid="uid://dot3ob5w5856b" path="res://theme/secondary_bg.tres" id="5_35s0p"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35s0p"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.443137, 0.443137, 0.443137, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://3yfgh8je56mx" path="res://src/ui/ingame/inventory/value_button.tscn" id="6_6om06"]
+[ext_resource type="PackedScene" uid="uid://dbc5n0l2322gd" path="res://src/ui/ingame/component/coin_value_container.tscn" id="6_ikjoo"]
+[ext_resource type="PackedScene" uid="uid://c6d4vb0xl3cb" path="res://src/ui/ingame/component/gem_value_container.tscn" id="7_6om06"]
 
 [node name="InventoryUi" type="CanvasLayer"]
 script = ExtResource("1_jrvep")
@@ -140,39 +132,9 @@ text = "1x"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="LevelLbl" type="Label" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="LevelXpContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("4_2dase")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(48, 0)
 layout_mode = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_35s0p")
-text = "999"
-horizontal_alignment = 1
-
-[node name="XpBar" type="ProgressBar" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 24)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-mouse_filter = 2
-step = 1.0
-show_percentage = false
-
-[node name="XpLbl" type="Label" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/XpBar"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "0 / 0"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -185,11 +147,7 @@ texture = ExtResource("4_xtemm")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-theme_override_constants/separation = 1
-
-[node name="CurrencyLbl" type="Label" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3/HBoxContainer"]
+[node name="CurrencyLbl" type="Label" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
@@ -210,26 +168,46 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="SellOneBtn" type="Button" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="SellOneBtn" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("6_6om06")]
 unique_name_in_owner = true
 layout_mode = 2
-text = "sell_one"
+title = "sell_one"
+image = ExtResource("4_xtemm")
 
-[node name="Sell25PBtn" type="Button" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="SellAllBtn" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("6_6om06")]
 unique_name_in_owner = true
 layout_mode = 2
-text = "sell_25p"
+title = "sell_all"
+image = ExtResource("4_xtemm")
 
-[node name="Sell50PBtn" type="Button" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
+[node name="BorderPanelContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_4htqt")]
 layout_mode = 2
-text = "sell_50p"
+size_flags_vertical = 1
 
-[node name="SellAllBtn" type="Button" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="CoinValueContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer2" instance=ExtResource("6_ikjoo")]
+layout_mode = 2
+
+[node name="GemValueContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer2" instance=ExtResource("7_6om06")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="SellAllArtifactsBtn" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/HBoxContainer" instance=ExtResource("6_6om06")]
 unique_name_in_owner = true
 layout_mode = 2
-text = "sell_all"
-expand_icon = true
+title = "sell_all_artifacts"
+image = ExtResource("4_xtemm")
 
 [node name="BackBtn" type="Button" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -239,3 +217,4 @@ theme_override_font_sizes/font_size = 48
 text = "back"
 
 [editable path="BorderPanelContainer"]
+[editable path="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/BorderPanelContainer"]

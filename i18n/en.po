@@ -110,6 +110,9 @@ msgstr "Select Level"
 
 # Upgrades
 
+msgid "buy_all"
+msgstr "Buy all"
+
 msgid "level_required"
 msgstr "(Level required: %s)"
 
@@ -121,6 +124,12 @@ msgstr "Increase Stamina #2"
 
 msgid "stamina_up3"
 msgstr "Increase Stamina #3"
+
+msgid "stamina_up4"
+msgstr "Increase Stamina #4"
+
+msgid "stamina_up5"
+msgstr "Increase Stamina #5"
 
 msgid "damage_up"
 msgstr "Increase Damage"
@@ -136,14 +145,11 @@ msgstr "Increase Damage #3"
 msgid "sell_one"
 msgstr "Sell one"
 
-msgid "sell_25p"
-msgstr "Sell 25%"
-
-msgid "sell_50p"
-msgstr "Sell 50%"
-
 msgid "sell_all"
 msgstr "Sell all"
+
+msgid "sell_all_artifacts"
+msgstr "Sell all Artifacts"
 
 # End UI
 msgid "finished"

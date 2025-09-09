@@ -1,6 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://7we2yqst0vgd"]
 
 [ext_resource type="Script" uid="uid://fwdsdmxdc45o" path="res://src/ui/ingame/level/end/end_ui.gd" id="1_tg173"]
+[ext_resource type="PackedScene" uid="uid://d2htlbcx3auv5" path="res://src/ui/component/level_xp_container.tscn" id="2_d2d8x"]
 [ext_resource type="AudioStream" uid="uid://cl873tsgcfeb6" path="res://assets/map/sound/level_progress.wav" id="2_tydwo"]
 [ext_resource type="AudioStream" uid="uid://78h85whvcvip" path="res://assets/map/sound/level_up.wav" id="3_xde1e"]
 
@@ -13,18 +14,6 @@ border_width_bottom = 2
 border_color = Color(1, 1, 1, 0.0941176)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xde1e"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xde1e"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.443137, 0.443137, 0.443137, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
 
 [node name="EndUi" type="CanvasLayer"]
 script = ExtResource("1_tg173")
@@ -84,39 +73,9 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/PlayerStats/LevelContainer/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="LevelLbl" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/PlayerStats/LevelContainer/MarginContainer/HBoxContainer"]
+[node name="LevelXpContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/PlayerStats/LevelContainer/MarginContainer" instance=ExtResource("2_d2d8x")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(48, 0)
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_styles/normal = SubResource("StyleBoxFlat_xde1e")
-text = "999"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="XpBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/PlayerStats/LevelContainer/MarginContainer/HBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 24)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-show_percentage = false
-
-[node name="XpLbl" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/PlayerStats/LevelContainer/MarginContainer/HBoxContainer/XpBar"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "999 / 999"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Header" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true

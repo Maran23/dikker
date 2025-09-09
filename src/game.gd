@@ -42,7 +42,7 @@ func collect_artifact(artifact: ArtifactItem):
 		uncovered_special_player.play()
 
 func reduce_stamina(amount: int):
-	stamina -= 1
+	stamina -= amount
 
 	dig_sound_player.pitch_scale = Utils.random_float(0.9, 1.1)
 	dig_sound_player.play()

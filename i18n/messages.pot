@@ -68,9 +68,6 @@ msgstr ""
 msgid "other"
 msgstr ""
 
-msgid "prestige"
-msgstr ""
-
 msgid "store"
 msgstr ""
 
@@ -113,6 +110,9 @@ msgstr ""
 
 # Upgrades
 
+msgid "buy_all"
+msgstr ""
+
 msgid "level_required"
 msgstr ""
 
@@ -123,6 +123,12 @@ msgid "stamina_up2"
 msgstr ""
 
 msgid "stamina_up3"
+msgstr ""
+
+msgid "stamina_up4"
+msgstr ""
+
+msgid "stamina_up5"
 msgstr ""
 
 msgid "damage_up"
@@ -139,13 +145,10 @@ msgstr ""
 msgid "sell_one"
 msgstr ""
 
-msgid "sell_25p"
-msgstr ""
-
-msgid "sell_50p"
-msgstr ""
-
 msgid "sell_all"
+msgstr ""
+
+msgid "sell_all_artifacts"
 msgstr ""
 
 # End UI

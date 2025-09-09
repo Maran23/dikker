@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2htlbcx3auv5"]
+
+[ext_resource type="Script" uid="uid://blpqvm4jtgi5r" path="res://src/ui/component/level_xp_container.gd" id="1_0mlqe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfvuw"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.443137, 0.443137, 0.443137, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="LevelXpContainer" type="HBoxContainer"]
+custom_minimum_size = Vector2(256, 48)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1664.0
+offset_bottom = -1032.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+script = ExtResource("1_0mlqe")
+
+[node name="LevelLbl" type="Label" parent="."]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_kfvuw")
+text = "999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="XpBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+mouse_filter = 2
+show_percentage = false
+
+[node name="XpLbl" type="Label" parent="XpBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "999/999"
+horizontal_alignment = 1
+vertical_alignment = 1

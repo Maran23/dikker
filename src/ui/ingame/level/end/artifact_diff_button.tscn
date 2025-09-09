@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctfpnolcgnsox"]
+[gd_scene load_steps=7 format=3 uid="uid://ctfpnolcgnsox"]
 
 [ext_resource type="Script" uid="uid://drf65cjjt7yf6" path="res://src/ui/ingame/level/end/artifact_diff_button.gd" id="1_y4wed"]
 [ext_resource type="Texture2D" uid="uid://blxevfy314vt0" path="res://assets/map/artifact/shield_lion.webp" id="2_y4wed"]
 [ext_resource type="Texture2D" uid="uid://dtayffjjwm2t2" path="res://assets/ui/currency/coin.webp" id="3_8yatw"]
+[ext_resource type="AudioStream" uid="uid://b71fxnwfyr3lu" path="res://assets/map/sound/level_up_artifact.wav" id="4_put88"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4wed"]
 bg_color = Color(0.6, 0.6, 0.6, 0.0941176)
@@ -165,3 +166,8 @@ text = ">"
 unique_name_in_owner = true
 layout_mode = 2
 text = "999"
+
+[node name="LevelUpArtifactPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_put88")
+max_polyphony = 3
+bus = &"Sound"
