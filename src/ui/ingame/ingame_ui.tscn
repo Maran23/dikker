@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://lgd2g38edtud" path="res://src/ui/component/border_panel_container.tscn" id="2_kfvuw"]
 [ext_resource type="PackedScene" uid="uid://b6h1raptn7y73" path="res://src/ui/ingame/component/section_container.tscn" id="3_24kjr"]
 [ext_resource type="PackedScene" uid="uid://uk6ksjr1o1i0" path="res://src/ui/component/value_container.tscn" id="3_sfhn3"]
-[ext_resource type="PackedScene" uid="uid://dqnuttli5b3sv" path="res://src/ui/component/uniform_icon_button.tscn" id="4_e1l4u"]
 [ext_resource type="StyleBox" uid="uid://cpkdte5woiv0y" path="res://theme/dark_bg.tres" id="4_mcd4b"]
 [ext_resource type="Texture2D" uid="uid://dh1idqfnxsl1d" path="res://assets/ui/currency/prestige.webp" id="4_rm1f2"]
 [ext_resource type="Texture2D" uid="uid://c3xl566njkdtf" path="res://assets/ui/icon/ingame/arrow_up.webp" id="5_0sowk"]
@@ -16,7 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://dbc5n0l2322gd" path="res://src/ui/ingame/component/coin_value_container.tscn" id="8_5nqb0"]
 [ext_resource type="Texture2D" uid="uid://dnhbrt41dpys3" path="res://assets/ui/icon/upgrade/damage.webp" id="9_5nqb0"]
 [ext_resource type="Texture2D" uid="uid://7nebalrcffx4" path="res://assets/ui/icon/upgrade/stamina.webp" id="10_eur1o"]
-[ext_resource type="Texture2D" uid="uid://hcllaf87bde8" path="res://assets/ui/icon/ingame/inventory.webp" id="12_kfvuw"]
+[ext_resource type="PackedScene" uid="uid://bl3wj0jsqhowx" path="res://src/ui/ingame/ingame_button.tscn" id="13_eur1o"]
+[ext_resource type="Texture2D" uid="uid://cffe7hj2owwmi" path="res://assets/ui/icon/ingame/shovel.webp" id="15_8krx2"]
 
 [node name="IngameUi" type="CanvasLayer"]
 script = ExtResource("1_f8ije")
@@ -121,21 +121,26 @@ layout_mode = 2
 [node name="Label" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/PanelContainer" index="0"]
 text = "permanent"
 
-[node name="UniformIconButton" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="0" instance=ExtResource("4_e1l4u")]
+[node name="IngameButton" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="0" instance=ExtResource("13_eur1o")]
 layout_mode = 2
+disabled = true
 text = "prestige"
 icon = ExtResource("4_rm1f2")
 
-[node name="UniformIconButton2" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="1" instance=ExtResource("4_e1l4u")]
+[node name="IngameButton2" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="1" instance=ExtResource("13_eur1o")]
 layout_mode = 2
+disabled = true
 text = "store"
 icon = ExtResource("6_kfvuw")
 
-[node name="UniformIconButton3" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="2" instance=ExtResource("4_e1l4u")]
+[node name="IngameButton3" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="2" instance=ExtResource("13_eur1o")]
 layout_mode = 2
+disabled = true
 text = "gear"
+icon = ExtResource("15_8krx2")
 
-[node name="UniformIconButton4" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="3" instance=ExtResource("4_e1l4u")]
+[node name="CollectionBtn" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PermantSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="3" instance=ExtResource("13_eur1o")]
+unique_name_in_owner = true
 layout_mode = 2
 text = "collection"
 icon = ExtResource("6_xvytg")
@@ -146,22 +151,21 @@ layout_mode = 2
 [node name="Label" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection/MarginContainer/VBoxContainer/PanelContainer" index="0"]
 text = "this_prestige"
 
-[node name="DigBtn" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="0" instance=ExtResource("4_e1l4u")]
+[node name="DigBtn" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="0" instance=ExtResource("13_eur1o")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "dig"
+icon = ExtResource("15_8krx2")
 
-[node name="UpgradesBtn" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="1" instance=ExtResource("4_e1l4u")]
+[node name="UpgradesBtn" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="1" instance=ExtResource("13_eur1o")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "upgrades"
 icon = ExtResource("5_0sowk")
 
-[node name="InventoryBtn" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="2" instance=ExtResource("4_e1l4u")]
+[node name="InventoryBtn" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/PrestigeSection/MarginContainer/VBoxContainer/SectionElementFlowContainer" index="2" instance=ExtResource("13_eur1o")]
 unique_name_in_owner = true
 layout_mode = 2
-text = "inventory"
-icon = ExtResource("12_kfvuw")
 
 [node name="OtherSection" parent="HBoxContainer/ButtonsPanel/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_24kjr")]
 layout_mode = 2

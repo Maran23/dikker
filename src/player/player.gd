@@ -16,7 +16,9 @@ signal damage_changed
 
 @onready var save_timer: Timer = $SaveTimer
 
-var level: int = 1 : set = set_level
+var collection: Collection
+
+var level: int : set = set_level
 var xp: int : set = set_xp
 
 var coins: int : set = set_coins

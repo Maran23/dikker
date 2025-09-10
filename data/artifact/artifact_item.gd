@@ -13,6 +13,11 @@ enum Rarity {
 
 var info: ArtifactInfo
 
+func add_count(added: int):
+	count += added
+
+	Player.collection.add_artifact(self, added)
+
 func add_xp(xp: int):
 	stats.add_xp(info.level_up_xp, xp)
 

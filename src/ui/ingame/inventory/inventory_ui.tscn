@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhd20v1jgopp5"]
+[gd_scene load_steps=11 format=3 uid="uid://dhd20v1jgopp5"]
 
 [ext_resource type="Script" uid="uid://c4akx874f6f6g" path="res://src/ui/ingame/inventory/inventory_ui.gd" id="1_jrvep"]
 [ext_resource type="PackedScene" uid="uid://lgd2g38edtud" path="res://src/ui/component/border_panel_container.tscn" id="2_4htqt"]
 [ext_resource type="StyleBox" uid="uid://cpkdte5woiv0y" path="res://theme/dark_bg.tres" id="3_pd273"]
 [ext_resource type="PackedScene" uid="uid://d2htlbcx3auv5" path="res://src/ui/component/level_xp_container.tscn" id="4_2dase"]
+[ext_resource type="Texture2D" uid="uid://bwfu1oq56x3up" path="res://assets/map/artifact/coin_rusty.webp" id="4_wixtg"]
 [ext_resource type="Texture2D" uid="uid://dtayffjjwm2t2" path="res://assets/ui/currency/coin.webp" id="4_xtemm"]
 [ext_resource type="StyleBox" uid="uid://dot3ob5w5856b" path="res://theme/secondary_bg.tres" id="5_35s0p"]
 [ext_resource type="PackedScene" uid="uid://3yfgh8je56mx" path="res://src/ui/ingame/inventory/value_button.tscn" id="6_6om06"]
@@ -29,30 +30,33 @@ horizontal_alignment = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 5
 
-[node name="ArtifactContainer" type="ScrollContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-horizontal_scroll_mode = 0
-
-[node name="PanelContainer" type="PanelContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ArtifactContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ArtifactContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="ArtifactsFlowContainer" type="HFlowContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ArtifactContainer/PanelContainer/MarginContainer"]
+[node name="ArtifactContainer" type="ScrollContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ArtifactsFlowContainer" type="HFlowContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/ArtifactContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
 
 [node name="SidePanel" type="PanelContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(512, 0)
@@ -94,6 +98,7 @@ layout_mode = 2
 theme_override_constants/separation = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
@@ -101,6 +106,7 @@ alignment = 1
 [node name="ImageRect" type="TextureRect" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+texture = ExtResource("4_wixtg")
 expand_mode = 2
 stretch_mode = 5
 
@@ -110,15 +116,9 @@ custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 48
+text = "name"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="DescLbl" type="Label" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 24)
-layout_mode = 2
-horizontal_alignment = 1
-autowrap_mode = 3
 
 [node name="HSeparator" type="HSeparator" parent="BorderPanelContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SidePanel/SidePanelRoot/VBoxContainer2/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

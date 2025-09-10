@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://cffe7hj2owwmi" path="res://assets/ui/icon/ingame/shovel.webp" id="1_2jyl4"]
 
 [node name="UniformIconButton" type="Button"]
-custom_minimum_size = Vector2(256, 256)
+custom_minimum_size = Vector2(280, 280)
 offset_right = 189.0
 offset_bottom = 161.0
 theme_override_font_sizes/font_size = 48
-text = "Dig"
+text = "Inventory"
 icon = ExtResource("1_2jyl4")
 icon_alignment = 1
 vertical_icon_alignment = 0

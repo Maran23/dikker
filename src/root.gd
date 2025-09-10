@@ -3,15 +3,17 @@ extends Node
 const MAP_SCENE: PackedScene = preload("res://src/map/map.tscn")
 
 @onready var dig_ui: CanvasLayer = $DigUi
-@onready var ingame_ui: IngameUi = $IngameMenu
+@onready var ingame_ui: IngameUi = $IngameUi
 @onready var level_select_ui: LevelSelectUi = $LevelSelectUi
 @onready var end_ui: EndUi = $EndUi
 @onready var inventory_ui: CanvasLayer = $InventoryUi
 @onready var upgrades_ui: CanvasLayer = $UpgradesUi
+@onready var collection_ui: CanvasLayer = $CollectionUi
 
 @onready var all_uis: Array[CanvasLayer] = [
 	dig_ui,
 	ingame_ui,
+	collection_ui,
 	level_select_ui,
 	inventory_ui,
 	upgrades_ui,
@@ -24,6 +26,8 @@ func _ready() -> void:
 	Game.level_started.connect(start_level)
 	Game.level_finished.connect(finish_level)
 
+	ingame_ui.collection_btn.pressed.connect(show_collection_ui)
+
 	ingame_ui.dig_btn.pressed.connect(show_level_ui)
 	ingame_ui.inventory_btn.pressed.connect(show_inventory_ui)
 	ingame_ui.upgrades_btn.pressed.connect(show_upgrades_ui)
@@ -31,17 +35,21 @@ func _ready() -> void:
 	end_ui.continue_btn.pressed.connect(end_game_show_ingame_menu)
 	end_ui.restart_btn.pressed.connect(restart_level)
 
+	collection_ui.back_btn.pressed.connect(show_ingame_ui)
 	inventory_ui.back_btn.pressed.connect(show_ingame_ui)
 	level_select_ui.back_btn.pressed.connect(show_ingame_ui)
 	upgrades_ui.back_btn.pressed.connect(show_ingame_ui)
 
-	ingame_ui.visible = true
+	toggle_visible(ingame_ui)
 
 func toggle_visible(visible_ui: CanvasLayer):
 	for ui: CanvasLayer in all_uis:
 		ui.visible = false
 
 	visible_ui.visible = true
+
+func show_collection_ui():
+	toggle_visible(collection_ui)
 
 func show_ingame_ui():
 	toggle_visible(ingame_ui)

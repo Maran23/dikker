@@ -8,7 +8,6 @@ const GREEN_BG: StyleBoxFlat = preload("res://theme/green_bg.tres")
 @onready var restart_btn: Button = %RestartBtn
 @onready var header: RichTextLabel = %Header
 
-@onready var level_container: PanelContainer = %LevelContainer
 @onready var level_xp_container: LevelXpContainer = %LevelXpContainer
 
 @onready var level_progress_player: AudioStreamPlayer = $LevelProgressPlayer
@@ -40,8 +39,6 @@ func on_menu_visible():
 	level_xp_container.set_xp_label("+" + Utils.fi(gained_xp))
 
 	if (Player.level > prev_level):
-		level_container.add_theme_stylebox_override(&"panel", GREEN_BG)
-
 		var tween: Tween = create_tween()
 		tween.tween_property(level_xp_container.xp_bar, ^"value", next_level_xp, 1)
 		tween.tween_callback(update_level)
@@ -52,7 +49,6 @@ func on_menu_visible():
 
 func rebuild_ui() -> Array[ArtifactDiffButton]:
 	level_xp_container.level_lbl.remove_theme_color_override(&"font_color")
-	level_container.add_theme_stylebox_override(&"panel", StyleBoxEmpty.new())
 
 	if (Game.is_completed):
 		header.add_theme_color_override(&"default_color", Game.GREEN)
@@ -76,7 +72,7 @@ func rebuild_ui() -> Array[ArtifactDiffButton]:
 
 func level_artifacts():
 	for artifact: ArtifactItem in Game.artifacts:
-		artifact.count += 1
+		artifact.add_count(1)
 		artifact.add_xp(1)
 
 func calc_gained_xp() -> int:

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl3wj0jsqhowx"]
+
+[ext_resource type="Texture2D" uid="uid://hcllaf87bde8" path="res://assets/ui/icon/ingame/inventory.webp" id="1_tfp7x"]
+
+[node name="IngameButton" type="Button"]
+custom_minimum_size = Vector2(304, 304)
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 48
+text = "Inventory"
+icon = ExtResource("1_tfp7x")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true

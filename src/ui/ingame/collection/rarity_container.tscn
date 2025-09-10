@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dthxwev5nn22q"]
+
+[ext_resource type="StyleBox" uid="uid://cpkdte5woiv0y" path="res://theme/dark_bg.tres" id="1_36qfc"]
+[ext_resource type="Texture2D" uid="uid://blxevfy314vt0" path="res://assets/map/artifact/shield_lion.webp" id="1_qx16x"]
+[ext_resource type="Script" uid="uid://cgwkp4nux6b0g" path="res://src/ui/ingame/collection/rarity_container.gd" id="1_uf3tf"]
+
+[node name="RarityContainer" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_styles/panel = ExtResource("1_36qfc")
+script = ExtResource("1_uf3tf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="ImageRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_qx16x")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="CountLbl" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1x"

@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvfw5v3x1qvdf"]
+
+[ext_resource type="Texture2D" uid="uid://dqpbl8qggjqqx" path="res://assets/map/artifact/ammonit.webp" id="1_6nmu5"]
+[ext_resource type="ButtonGroup" uid="uid://bwecwbtyhem7m" path="res://src/ui/component/button_group.tres" id="1_f1y1y"]
+[ext_resource type="Script" uid="uid://bo0c0clihpl7y" path="res://src/ui/ingame/collection/artifact_collection_button.gd" id="1_gg5ja"]
+
+[node name="ArtifactCollectionButton" type="Button"]
+custom_minimum_size = Vector2(288, 288)
+offset_right = 32.0
+offset_bottom = 32.0
+mouse_filter = 1
+toggle_mode = true
+button_group = ExtResource("1_f1y1y")
+icon_alignment = 1
+vertical_icon_alignment = 0
+script = ExtResource("1_gg5ja")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="ImageRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("1_6nmu5")
+stretch_mode = 3
+
+[node name="CountLbl" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92549, 0.435294, 0, 1)
+text = "555x"
+horizontal_alignment = 1
+
+[node name="NameLbl" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "fire oder so knife oder so"
+horizontal_alignment = 1
+autowrap_mode = 3

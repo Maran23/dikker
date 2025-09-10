@@ -8,6 +8,7 @@ class_name IngameUi extends MenuCanvasLayer
 @onready var dig_btn: Button = %DigBtn
 @onready var inventory_btn: Button = %InventoryBtn
 @onready var upgrades_btn: Button = %UpgradesBtn
+@onready var collection_btn: Button = %CollectionBtn
 
 func _ready() -> void:
 	super._ready()

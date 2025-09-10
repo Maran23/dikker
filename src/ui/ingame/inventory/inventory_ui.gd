@@ -10,7 +10,6 @@ const INVENTORY_BUTTON: PackedScene = preload("res://src/ui/ingame/inventory/inv
 @onready var sell_all_btn: ValueButton = %SellAllBtn
 
 @onready var title_lbl: Label = %TitleLbl
-@onready var desc_lbl: Label = %DescLbl
 @onready var image_rect: TextureRect = %ImageRect
 @onready var count_lbl: Label = %CountLbl
 @onready var currency_lbl: Label = %CurrencyLbl
@@ -85,8 +84,6 @@ func update_details(btn: InventoryButton):
 	image_rect.material = Game.get_rarity_shader_material(current_artifact.rarity)
 	title_lbl.text = current_artifact.info.name
 	title_lbl.add_theme_color_override(&"font_color", Game.get_rarity_color(current_artifact.rarity))
-
-	desc_lbl.text = current_artifact.info.description
 
 	level_xp_container.set_level(current_artifact.stats.level)
 	var next_level_xp: int = current_artifact.calculate_next_level_xp()
