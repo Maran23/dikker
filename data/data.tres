@@ -3,42 +3,42 @@
 [ext_resource type="Script" uid="uid://bp2or3y2rt5gs" path="res://data/level/level.gd" id="1_8kyea"]
 [ext_resource type="Script" uid="uid://n4jum6dwqx2j" path="res://data/artifact/artifact_info.gd" id="2_8kyea"]
 [ext_resource type="Script" uid="uid://ck7xbm8va0wlh" path="res://data/data.gd" id="2_h2d3w"]
+[ext_resource type="AudioStream" uid="uid://cjw18sm0g6h60" path="res://assets/map/level/grass/sound/grass.wav" id="2_o6mkr"]
 [ext_resource type="Texture2D" uid="uid://bwfu1oq56x3up" path="res://assets/map/artifact/coin_rusty.webp" id="3_tc0r5"]
 [ext_resource type="Texture2D" uid="uid://b7wfgwx2kp4hh" path="res://assets/map/artifact/knife_fire.webp" id="4_tc0r5"]
 [ext_resource type="Texture2D" uid="uid://c78prtu8oa2hl" path="res://assets/map/artifact/bone.webp" id="5_8kyea"]
 [ext_resource type="Texture2D" uid="uid://dqpbl8qggjqqx" path="res://assets/map/artifact/ammonit.webp" id="6_ttcv8"]
 [ext_resource type="Texture2D" uid="uid://slbkdmbns8q" path="res://assets/map/artifact/mask_monkey.webp" id="7_j286e"]
-[ext_resource type="Texture2D" uid="uid://bd7731an8hsn3" path="res://assets/map/level/grass/grass1.webp" id="7_kityl"]
 [ext_resource type="Texture2D" uid="uid://blxevfy314vt0" path="res://assets/map/artifact/shield_lion.webp" id="8_o1wax"]
-[ext_resource type="Texture2D" uid="uid://bum1i5dk4n5g7" path="res://assets/map/level/grass/grass2.webp" id="8_siy3q"]
-[ext_resource type="Texture2D" uid="uid://eg02b2ekby2u" path="res://assets/map/level/grass/grass3.webp" id="9_o1wax"]
+[ext_resource type="Texture2D" uid="uid://bd7731an8hsn3" path="res://assets/map/level/grass/block/grass1.webp" id="10_o6mkr"]
 [ext_resource type="Texture2D" uid="uid://ckg6hxfe1bapf" path="res://assets/map/level/grass/grass_level.webp" id="10_xphq4"]
-[ext_resource type="Texture2D" uid="uid://duj2051vs1aek" path="res://assets/map/level/grass/grass4.webp" id="11_8kyea"]
-[ext_resource type="Texture2D" uid="uid://jmwxcgu6yxq0" path="res://assets/map/level/grass/top/flowers_top.webp" id="11_wtc8a"]
-[ext_resource type="Texture2D" uid="uid://hqm8wjckpafd" path="res://assets/map/level/dirt/dirt1.webp" id="13_r78st"]
-[ext_resource type="AudioStream" uid="uid://1lto3sevgnat" path="res://assets/map/effect/dig_grass.ogg" id="14_o6mkr"]
-[ext_resource type="Texture2D" uid="uid://da15dmr84248g" path="res://assets/map/level/dirt/dirt2.webp" id="14_v7t4x"]
-[ext_resource type="Texture2D" uid="uid://dwlgr86vqe7hl" path="res://assets/map/level/dirt/dirt3.webp" id="15_4wd7x"]
-[ext_resource type="AudioStream" uid="uid://bkkr6fi8b847y" path="res://assets/music/grass.mp3" id="15_ajvow"]
-[ext_resource type="Texture2D" uid="uid://dqm21fk5gjmuf" path="res://assets/map/level/grass/top/flowers_top2.webp" id="15_wbxeb"]
+[ext_resource type="Texture2D" uid="uid://bum1i5dk4n5g7" path="res://assets/map/level/grass/block/grass2.webp" id="11_v176c"]
+[ext_resource type="Texture2D" uid="uid://eg02b2ekby2u" path="res://assets/map/level/grass/block/grass3.webp" id="12_eniho"]
+[ext_resource type="Texture2D" uid="uid://duj2051vs1aek" path="res://assets/map/level/grass/block/grass4.webp" id="13_lagmg"]
+[ext_resource type="AudioStream" uid="uid://dkyha5wqn1d3i" path="res://assets/map/level/grass/sound/dig.wav" id="14_o6mkr"]
+[ext_resource type="Texture2D" uid="uid://jmwxcgu6yxq0" path="res://assets/map/level/grass/layer/flowers_top.webp" id="16_s7gyx"]
 [ext_resource type="Texture2D" uid="uid://d1d6cnl1p0tt6" path="res://assets/map/level/dirt/dirt_level.webp" id="16_sto4h"]
-[ext_resource type="Texture2D" uid="uid://bwhcvtgeq20eg" path="res://assets/map/level/dirt/top/grass_top.webp" id="17_ajvow"]
-[ext_resource type="Texture2D" uid="uid://bwiptxvfjuwph" path="res://assets/map/level/dirt/dirt4.webp" id="17_ttcv8"]
-[ext_resource type="Texture2D" uid="uid://b8tif2usxhsor" path="res://assets/map/level/dirt/top/stone_top.webp" id="18_o6mkr"]
-[ext_resource type="Texture2D" uid="uid://cqf7vk35t50se" path="res://assets/map/level/stone/stone1.webp" id="19_v176c"]
-[ext_resource type="Texture2D" uid="uid://b3y81nhwu334a" path="res://assets/map/level/stone/stone2.webp" id="20_eniho"]
-[ext_resource type="Texture2D" uid="uid://bo2tvmnpbfqa1" path="res://assets/map/level/stone/stone3.webp" id="21_lagmg"]
-[ext_resource type="Texture2D" uid="uid://cefrkkkke08rt" path="res://assets/map/level/stone/stone4.webp" id="22_1gv2p"]
-[ext_resource type="AudioStream" uid="uid://dncgfk7fd41mb" path="res://assets/music/dirt.mp3" id="23_o6mkr"]
+[ext_resource type="Texture2D" uid="uid://dqm21fk5gjmuf" path="res://assets/map/level/grass/layer/flowers_top2.webp" id="17_o3r0c"]
+[ext_resource type="AudioStream" uid="uid://d3apcvebxb1jh" path="res://assets/map/level/dirt/sound/dirt.wav" id="18_v176c"]
+[ext_resource type="Texture2D" uid="uid://hqm8wjckpafd" path="res://assets/map/level/dirt/block/dirt1.webp" id="19_8qjfo"]
+[ext_resource type="Texture2D" uid="uid://da15dmr84248g" path="res://assets/map/level/dirt/block/dirt2.webp" id="20_4ott8"]
+[ext_resource type="Texture2D" uid="uid://dwlgr86vqe7hl" path="res://assets/map/level/dirt/block/dirt3.webp" id="21_lf15s"]
+[ext_resource type="Texture2D" uid="uid://bwiptxvfjuwph" path="res://assets/map/level/dirt/block/dirt4.webp" id="22_xxh4x"]
 [ext_resource type="Texture2D" uid="uid://ctjod212gjxbv" path="res://assets/map/level/stone/stone_level.webp" id="23_s7gyx"]
-[ext_resource type="AudioStream" uid="uid://bgu7iuauhf2wv" path="res://assets/map/effect/dig_dirt.ogg" id="23_v176c"]
+[ext_resource type="AudioStream" uid="uid://c3b6d247sg4jl" path="res://assets/map/level/dirt/sound/dig.wav" id="23_v176c"]
+[ext_resource type="Texture2D" uid="uid://bwhcvtgeq20eg" path="res://assets/map/level/dirt/layer/grass_top.webp" id="25_i1pyj"]
+[ext_resource type="Texture2D" uid="uid://b8tif2usxhsor" path="res://assets/map/level/dirt/layer/stone_top.webp" id="26_5llem"]
+[ext_resource type="AudioStream" uid="uid://dhtyfu6n7kc4s" path="res://assets/map/level/stone/sound/stone.wav" id="27_eniho"]
 [ext_resource type="Script" uid="uid://cs7k5sc862itr" path="res://data/upgrade/upgrade.gd" id="27_ttcv8"]
-[ext_resource type="Texture2D" uid="uid://bxqauilc02b8" path="res://assets/map/level/stone/top/surface.webp" id="27_wtc8a"]
+[ext_resource type="Texture2D" uid="uid://cqf7vk35t50se" path="res://assets/map/level/stone/block/stone1.webp" id="28_jgrh6"]
 [ext_resource type="Texture2D" uid="uid://7nebalrcffx4" path="res://assets/ui/icon/upgrade/stamina.webp" id="28_siy3q"]
-[ext_resource type="Texture2D" uid="uid://c81uviebp6x2g" path="res://assets/map/level/stone/top/surface2.webp" id="28_wbxeb"]
+[ext_resource type="Texture2D" uid="uid://b3y81nhwu334a" path="res://assets/map/level/stone/block/stone2.webp" id="29_d5wch"]
 [ext_resource type="Texture2D" uid="uid://dnhbrt41dpys3" path="res://assets/ui/icon/upgrade/damage.webp" id="29_o1wax"]
-[ext_resource type="AudioStream" uid="uid://cqlml1r2sny3y" path="res://assets/map/effect/pick.ogg" id="31_ajvow"]
-[ext_resource type="AudioStream" uid="uid://bisb15swmnor8" path="res://assets/music/stone.mp3" id="31_v176c"]
+[ext_resource type="Texture2D" uid="uid://bo2tvmnpbfqa1" path="res://assets/map/level/stone/block/stone3.webp" id="30_ycoq2"]
+[ext_resource type="Texture2D" uid="uid://cefrkkkke08rt" path="res://assets/map/level/stone/block/stone4.webp" id="31_g27u5"]
+[ext_resource type="AudioStream" uid="uid://yqfc2go0godl" path="res://assets/map/level/stone/sound/pick.wav" id="32_eniho"]
+[ext_resource type="Texture2D" uid="uid://bxqauilc02b8" path="res://assets/map/level/stone/layer/surface.webp" id="34_uleuj"]
+[ext_resource type="Texture2D" uid="uid://c81uviebp6x2g" path="res://assets/map/level/stone/layer/surface2.webp" id="35_vrr8w"]
 
 [sub_resource type="Resource" id="Resource_2uby0"]
 script = ExtResource("2_8kyea")
@@ -99,8 +99,8 @@ script = ExtResource("1_8kyea")
 name = "grass_level"
 image = ExtResource("10_xphq4")
 block_hp = 1
-blocks = Array[Texture2D]([ExtResource("7_kityl"), ExtResource("8_siy3q"), ExtResource("9_o1wax"), ExtResource("11_8kyea")])
-top_layers = Array[Texture2D]([ExtResource("11_wtc8a"), ExtResource("15_wbxeb")])
+blocks = Array[Texture2D]([ExtResource("10_o6mkr"), ExtResource("11_v176c"), ExtResource("12_eniho"), ExtResource("13_lagmg")])
+top_layers = Array[Texture2D]([ExtResource("16_s7gyx"), ExtResource("17_o3r0c")])
 block_color = Color(0.415686, 0.745098, 0.188235, 1)
 block_columns = 8
 block_rows = 8
@@ -109,7 +109,7 @@ max_artifacts = 6
 artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5"), SubResource("Resource_wtc8a")])
 finished_xp = 1
 completed_xp = 2
-ambient_music = ExtResource("15_ajvow")
+ambient_music = ExtResource("2_o6mkr")
 dig_sound = ExtResource("14_o6mkr")
 metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
 
@@ -118,8 +118,8 @@ script = ExtResource("1_8kyea")
 name = "dirt_level"
 image = ExtResource("16_sto4h")
 block_hp = 2
-blocks = Array[Texture2D]([ExtResource("13_r78st"), ExtResource("14_v7t4x"), ExtResource("15_4wd7x"), ExtResource("17_ttcv8")])
-top_layers = Array[Texture2D]([ExtResource("17_ajvow"), ExtResource("18_o6mkr")])
+blocks = Array[Texture2D]([ExtResource("19_8qjfo"), ExtResource("20_4ott8"), ExtResource("21_lf15s"), ExtResource("22_xxh4x")])
+top_layers = Array[Texture2D]([ExtResource("25_i1pyj"), ExtResource("26_5llem")])
 block_color = Color(0.694118, 0.529412, 0.443137, 1)
 block_columns = 9
 block_rows = 9
@@ -128,7 +128,7 @@ max_artifacts = 7
 artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5"), SubResource("Resource_wtc8a")])
 finished_xp = 2
 completed_xp = 4
-ambient_music = ExtResource("23_o6mkr")
+ambient_music = ExtResource("18_v176c")
 dig_sound = ExtResource("23_v176c")
 metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
 
@@ -137,8 +137,8 @@ script = ExtResource("1_8kyea")
 name = "stone_level"
 image = ExtResource("23_s7gyx")
 block_hp = 4
-blocks = Array[Texture2D]([ExtResource("19_v176c"), ExtResource("20_eniho"), ExtResource("21_lagmg"), ExtResource("22_1gv2p")])
-top_layers = Array[Texture2D]([ExtResource("27_wtc8a"), ExtResource("28_wbxeb")])
+blocks = Array[Texture2D]([ExtResource("28_jgrh6"), ExtResource("29_d5wch"), ExtResource("30_ycoq2"), ExtResource("31_g27u5")])
+top_layers = Array[Texture2D]([ExtResource("34_uleuj"), ExtResource("35_vrr8w")])
 block_color = Color(0.517647, 0.494118, 0.529412, 1)
 block_columns = 10
 block_rows = 10
@@ -147,8 +147,8 @@ max_artifacts = 10
 artifacts = Array[ExtResource("2_8kyea")]([SubResource("Resource_2uby0"), SubResource("Resource_u4xd7"), SubResource("Resource_dprmq"), SubResource("Resource_drkij"), SubResource("Resource_tc0r5"), SubResource("Resource_wtc8a")])
 finished_xp = 3
 completed_xp = 6
-ambient_music = ExtResource("31_v176c")
-dig_sound = ExtResource("31_ajvow")
+ambient_music = ExtResource("27_eniho")
+dig_sound = ExtResource("32_eniho")
 metadata/_custom_type_script = "uid://bp2or3y2rt5gs"
 
 [sub_resource type="Resource" id="Resource_kityl"]

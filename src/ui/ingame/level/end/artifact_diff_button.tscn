@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://drf65cjjt7yf6" path="res://src/ui/ingame/level/end/artifact_diff_button.gd" id="1_y4wed"]
 [ext_resource type="Texture2D" uid="uid://blxevfy314vt0" path="res://assets/map/artifact/shield_lion.webp" id="2_y4wed"]
 [ext_resource type="Texture2D" uid="uid://dtayffjjwm2t2" path="res://assets/ui/currency/coin.webp" id="3_8yatw"]
-[ext_resource type="AudioStream" uid="uid://b71fxnwfyr3lu" path="res://assets/map/sound/level_up_artifact.wav" id="4_put88"]
+[ext_resource type="AudioStream" uid="uid://b71fxnwfyr3lu" path="res://assets/map/sound/level/level_up_artifact.wav" id="4_put88"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y4wed"]
 bg_color = Color(0.6, 0.6, 0.6, 0.0941176)
