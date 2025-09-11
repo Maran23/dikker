@@ -11,4 +11,4 @@ func set_image(image: Texture2D):
 	image_rect.texture = image
 
 func set_count(count: int):
-	count_lbl.text = Utils.fi(count)
+	count_lbl.text = Utils.fi_down(count)

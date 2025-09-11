@@ -140,6 +140,18 @@ msgstr "Increase Damage #2"
 msgid "damage_up3"
 msgstr "Increase Damage #3"
 
+msgid "rare_chance_up"
+msgstr "Rare Artifact Chance"
+
+msgid "epic_chance_up"
+msgstr "Epic Artifact Chance"
+
+msgid "legendary_chance_up"
+msgstr "Legendary Artifact Chance"
+
+msgid "mythic_chance_up"
+msgstr "Mythic Artifact Chance"
+
 # Inventory
 
 msgid "sell_one"
@@ -154,6 +166,9 @@ msgstr "Sell all Artifacts"
 # End UI
 msgid "finished"
 msgstr "Finished"
+
+msgid "level_up"
+msgstr "Level Up"
 
 msgid "artifacts"
 msgstr "Artifacts"

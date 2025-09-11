@@ -10,4 +10,4 @@ func update_stamina():
 	stamina_hp_bar.max_value = Player.stamina
 	stamina_hp_bar.value = Game.stamina
 
-	stamina_hp_lbl.text = Utils.fi(Game.stamina)
+	stamina_hp_lbl.text = Utils.fi_up(Game.stamina)

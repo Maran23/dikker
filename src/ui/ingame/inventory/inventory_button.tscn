@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://drkeqmdksf2pr" path="res://src/ui/ingame/inventory/inventory_button.gd" id="1_kp1q5"]
 [ext_resource type="ButtonGroup" uid="uid://bwecwbtyhem7m" path="res://src/ui/component/button_group.tres" id="1_wvcpd"]
-[ext_resource type="Texture2D" uid="uid://dqpbl8qggjqqx" path="res://assets/map/artifact/ammonit.webp" id="2_xif1x"]
 [ext_resource type="Texture2D" uid="uid://dtayffjjwm2t2" path="res://assets/ui/currency/coin.webp" id="3_hkhcp"]
+[ext_resource type="Texture2D" uid="uid://blxevfy314vt0" path="res://assets/map/artifact/shield_lion.webp" id="3_wvcpd"]
 
 [node name="InventoryButton" type="Button"]
 custom_minimum_size = Vector2(256, 256)
@@ -34,7 +34,7 @@ theme_override_constants/separation = 5
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("2_xif1x")
+texture = ExtResource("3_wvcpd")
 stretch_mode = 3
 
 [node name="CountLbl" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -48,8 +48,9 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
-text = "fire oder so knife oder so"
+text = "fire oder so oder so"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]

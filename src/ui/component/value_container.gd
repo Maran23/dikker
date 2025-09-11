@@ -9,4 +9,4 @@ func _ready() -> void:
 	tooltip_text = title
 
 func set_value(value: int):
-	label.text = Utils.fi(value)
+	label.text = Utils.fi_down(value)

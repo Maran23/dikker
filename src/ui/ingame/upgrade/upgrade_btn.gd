@@ -8,6 +8,7 @@ class_name UpgradeButton extends Button
 @onready var base_lbl: Label = %BaseLbl
 @onready var improvement_lbl: Label = %ImprovementLbl
 @onready var cost_lbl: Label = %CostLbl
+@onready var current_value_lbl: Label = %CurrentValueLbl
 
 var upgrade_item: UpgradeItem : set = set_upgrade_item
 
@@ -24,10 +25,12 @@ func update():
 	cap_lbl.text = Utils.fi_slash(upgrade_item.count, upgrade.cap)
 	title_lbl.text = upgrade.title
 
-	base_lbl.text = Utils.ff(upgrade.improvement * upgrade_item.count)
-	improvement_lbl.text = Utils.ff(upgrade.improvement * (upgrade_item.count + 1))
+	base_lbl.text = Utils.ff_up(upgrade.improvement * upgrade_item.count)
+	improvement_lbl.text = Utils.ff_up(upgrade.improvement * (upgrade_item.count + 1))
 
-	cost_lbl.text = Utils.fi(cost)
+	current_value_lbl.text = "(" + Utils.ff_down(Player.get_upgrade_stat(upgrade_item)) + ")"
+
+	cost_lbl.text = Utils.fi_up(cost)
 
 	var level_too_low: bool = upgrade.level_requirement > Player.level
 	var not_enough_coins: bool = Player.coins < cost

@@ -19,5 +19,5 @@ func update():
 	name_lbl.text = artifact.info.name
 	name_lbl.add_theme_color_override(&"font_color", ArtifactItem.get_rarity_color(artifact.rarity))
 
-	count_lbl.text = Utils.fi(artifact.count) + "x"
-	currency_lbl.text = Utils.fi(artifact.get_value())
+	count_lbl.text = Utils.fi_down(artifact.count) + "x"
+	currency_lbl.text = Utils.fi_down(artifact.get_value())

@@ -87,9 +87,9 @@ func update_details(btn: InventoryButton):
 
 	level_xp_container.set_level(current_artifact.stats.level)
 	var next_level_xp: int = current_artifact.calculate_next_level_xp()
-	level_xp_container.set_xp(current_artifact.stats.xp, next_level_xp)
+	level_xp_container.set_xp_and_text(current_artifact.stats.xp, next_level_xp)
 
-	currency_lbl.text = Utils.fi(current_artifact.get_value())
+	currency_lbl.text = Utils.fi_up(current_artifact.get_value())
 
 	update_artifact_details()
 	update_sell_details()
@@ -108,7 +108,7 @@ func update_artifact_details():
 			back_btn.grab_focus()
 	else:
 		current_btn.update()
-		count_lbl.text = Utils.fi(current_artifact.count) + "x"
+		count_lbl.text = Utils.fi_up(current_artifact.count) + "x"
 		side_panel_root.visible = true
 
 func update_sell_details():

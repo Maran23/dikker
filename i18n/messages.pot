@@ -140,6 +140,18 @@ msgstr ""
 msgid "damage_up3"
 msgstr ""
 
+msgid "rare_up"
+msgstr ""
+
+msgid "epic_up"
+msgstr ""
+
+msgid "legendary_up"
+msgstr ""
+
+msgid "mythic_up"
+msgstr ""
+
 # Inventory
 
 msgid "sell_one"
@@ -154,6 +166,9 @@ msgstr ""
 # End UI
 
 msgid "finished"
+msgstr ""
+
+msgid "level_up"
 msgstr ""
 
 msgid "artifacts"

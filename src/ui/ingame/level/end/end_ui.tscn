@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://7we2yqst0vgd"]
+[gd_scene load_steps=7 format=3 uid="uid://7we2yqst0vgd"]
 
 [ext_resource type="Script" uid="uid://fwdsdmxdc45o" path="res://src/ui/ingame/level/end/end_ui.gd" id="1_tg173"]
 [ext_resource type="PackedScene" uid="uid://d2htlbcx3auv5" path="res://src/ui/component/level_xp_container.tscn" id="2_d2d8x"]
 [ext_resource type="AudioStream" uid="uid://cl873tsgcfeb6" path="res://assets/map/sound/level/level_progress.wav" id="2_tydwo"]
+[ext_resource type="PackedScene" uid="uid://5gj6ya3tf0k0" path="res://src/ui/ingame/level/end/level_up_lbl.tscn" id="3_qqvab"]
 [ext_resource type="AudioStream" uid="uid://78h85whvcvip" path="res://assets/map/sound/level/level_up.wav" id="3_xde1e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2d8x"]
@@ -59,7 +60,15 @@ theme_override_font_sizes/font_size = 48
 text = "player"
 horizontal_alignment = 1
 
-[node name="LevelXpContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/PlayerStats" instance=ExtResource("2_d2d8x")]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/PlayerStats"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="LevelXpContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/PlayerStats/VBoxContainer" instance=ExtResource("2_d2d8x")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LevelUpLbl" parent="MarginContainer/VBoxContainer/HBoxContainer2/PanelContainer/MarginContainer/PlayerStats/VBoxContainer" instance=ExtResource("3_qqvab")]
 unique_name_in_owner = true
 layout_mode = 2
 

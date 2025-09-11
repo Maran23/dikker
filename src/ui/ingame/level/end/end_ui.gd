@@ -12,6 +12,7 @@ const GREEN_BG: StyleBoxFlat = preload("res://theme/green_bg.tres")
 
 @onready var level_progress_player: AudioStreamPlayer = $LevelProgressPlayer
 @onready var level_up_player: AudioStreamPlayer = $LevelUpPlayer
+@onready var level_up_lbl: RichTextLabel = %LevelUpLbl
 
 func _ready() -> void:
 	super._ready()
@@ -29,17 +30,22 @@ func on_menu_visible():
 	level_progress_player.play()
 
 	var prev_level: int = Player.level
-	var next_level_xp: int = Player.calculate_next_level_xp()
+	var prev_xp: int = Player.xp
+	var prev_next_level_xp: int = Player.calculate_next_level_xp()
 
 	var gained_xp: int = calc_gained_xp()
 	Player.xp += gained_xp
 
-	level_xp_container.set_level(Player.level)
-	level_xp_container.set_xp_label("+" + Utils.fi(gained_xp))
+	var level_up: bool = Player.level > prev_level
 
-	if (Player.level > prev_level):
+	level_xp_container.set_level(prev_level)
+	level_xp_container.set_level_up(level_up)
+	level_xp_container.set_xp(prev_xp, prev_next_level_xp)
+	level_xp_container.set_plus_xp_text(gained_xp)
+
+	if (level_up):
 		var tween: Tween = create_tween()
-		tween.tween_property(level_xp_container.xp_bar, ^"value", next_level_xp, 1)
+		tween.tween_property(level_xp_container.xp_bar, ^"value", prev_next_level_xp, 1)
 		tween.tween_callback(update_level)
 	else:
 		var tween: Tween = create_tween()
@@ -47,8 +53,7 @@ func on_menu_visible():
 		tween.tween_callback(update_xp_label)
 
 func rebuild_ui() -> Array[ArtifactDiffButton]:
-	level_xp_container.level_lbl.remove_theme_color_override(&"font_color")
-
+	level_up_lbl.visible = false
 	if (Game.is_completed):
 		header.add_theme_color_override(&"default_color", Game.GREEN)
 	else:
@@ -88,21 +93,23 @@ func calc_gained_xp() -> int:
 
 func update_xp_label():
 	var next_level_xp: int = Player.calculate_next_level_xp()
-	level_xp_container.set_xp(Player.xp, next_level_xp)
+	level_xp_container.set_xp_and_text(Player.xp, next_level_xp)
 
 func update_level():
+	level_up_lbl.visible = true
 	level_up_player.play()
 
-	level_xp_container.level_lbl.add_theme_color_override(&"font_color", Game.GREEN)
 	level_xp_container.set_level(Player.level)
+
+	update_level_up_xp()
+
+func update_level_up_xp():
+	if (Player.xp == 0):
+		update_xp_label()
+		return
 
 	var next_level_xp: int = Player.calculate_next_level_xp()
 	level_xp_container.set_xp(0, next_level_xp)
-
-	if (Player.xp == 0):
-		return
-
-	level_xp_container.set_xp_label(Utils.fi(Player.xp))
 
 	var tween: Tween = create_tween()
 	tween.tween_property(level_xp_container.xp_bar, ^"value", Player.xp, 1)

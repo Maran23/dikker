@@ -25,6 +25,14 @@ static var rarity_materials: Dictionary[Rarity, ShaderMaterial] = {
 	Rarity.MYTHIC: create_material(Rarity.MYTHIC),
 }
 
+static var rarity_values: Dictionary[Rarity, int] = {
+	Rarity.NORMAL: 1,
+	Rarity.RARE: 3,
+	Rarity.EPIC: 5,
+	Rarity.LEGENDARY: 7,
+	Rarity.MYTHIC: 10,
+}
+
 @export var rarity: Rarity = Rarity.NORMAL
 @export var count: int
 @export var stats: ArtifactStats = ArtifactStats.new()
@@ -52,18 +60,7 @@ func get_xp_gain() -> int:
 	return get_rarity_multiplier()
 
 func get_rarity_multiplier() -> int:
-	match (rarity):
-		Rarity.NORMAL:
-			return 1
-		Rarity.RARE:
-			return 2
-		Rarity.EPIC:
-			return 3
-		Rarity.LEGENDARY:
-			return 4
-		Rarity.MYTHIC:
-			return 10
-	return 0
+	return rarity_values[rarity]
 
 func is_special() -> bool:
 	return rarity != Rarity.NORMAL

@@ -16,7 +16,11 @@ config/version="0.1"
 config/tags=PackedStringArray("project")
 run/main_scene="uid://bgobkdf567vqd"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="uid://dqhx0b8vsriig"
+boot_splash/bg_color=Color(0.56078434, 0.3372549, 0.23137255, 1)
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/image="uid://bg7mj5eic3wxv"
+config/icon="uid://bg7mj5eic3wxv"
 
 [autoload]
 

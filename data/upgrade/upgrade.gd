@@ -1,7 +1,9 @@
 class_name Upgrade extends Resource
 
 enum Attribute {
-	STAMINA, DAMAGE
+	STAMINA, DAMAGE,
+	NIGHT_CHANCE, FOG_CHANCE,
+	RARE_CHANCE, EPIC_CHANCE, LEGENDARY_CHANCE, MYTHIC_CHANCE
 }
 
 enum Type {

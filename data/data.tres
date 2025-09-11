@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Data" load_steps=57 format=3 uid="uid://ccd5tqi2itbot"]
+[gd_resource type="Resource" script_class="Data" load_steps=65 format=3 uid="uid://ccd5tqi2itbot"]
 
 [ext_resource type="Script" uid="uid://bp2or3y2rt5gs" path="res://data/level/level.gd" id="1_8kyea"]
 [ext_resource type="Script" uid="uid://n4jum6dwqx2j" path="res://data/artifact/artifact_info.gd" id="2_8kyea"]
@@ -39,6 +39,10 @@
 [ext_resource type="AudioStream" uid="uid://yqfc2go0godl" path="res://assets/map/level/stone/sound/pick.wav" id="32_eniho"]
 [ext_resource type="Texture2D" uid="uid://bxqauilc02b8" path="res://assets/map/level/stone/layer/surface.webp" id="34_uleuj"]
 [ext_resource type="Texture2D" uid="uid://c81uviebp6x2g" path="res://assets/map/level/stone/layer/surface2.webp" id="35_vrr8w"]
+[ext_resource type="Texture2D" uid="uid://bl81w5roga53d" path="res://assets/ui/icon/upgrade/rare.webp" id="40_1gv2p"]
+[ext_resource type="Texture2D" uid="uid://ddibchxli3n3h" path="res://assets/ui/icon/upgrade/mythic.webp" id="41_eniho"]
+[ext_resource type="Texture2D" uid="uid://c2ig3rr6fbr1i" path="res://assets/ui/icon/upgrade/epic.webp" id="41_s7gyx"]
+[ext_resource type="Texture2D" uid="uid://6kopnb2f00fm" path="res://assets/ui/icon/upgrade/legendary.webp" id="42_o3r0c"]
 
 [sub_resource type="Resource" id="Resource_2uby0"]
 script = ExtResource("2_8kyea")
@@ -172,6 +176,17 @@ cost = 500
 level_requirement = 5
 metadata/_custom_type_script = "uid://cs7k5sc862itr"
 
+[sub_resource type="Resource" id="Resource_eniho"]
+script = ExtResource("27_ttcv8")
+title = "rare_chance_up"
+image = ExtResource("40_1gv2p")
+cap = 4
+attribute = 4
+improvement = 1.0
+cost = 500
+level_requirement = 5
+metadata/_custom_type_script = "uid://cs7k5sc862itr"
+
 [sub_resource type="Resource" id="Resource_o1wax"]
 script = ExtResource("27_ttcv8")
 title = "stamina_up2"
@@ -180,6 +195,17 @@ cap = 5
 improvement = 1.0
 cost = 300
 level_requirement = 8
+metadata/_custom_type_script = "uid://cs7k5sc862itr"
+
+[sub_resource type="Resource" id="Resource_v176c"]
+script = ExtResource("27_ttcv8")
+title = "epic_chance_up"
+image = ExtResource("41_s7gyx")
+cap = 3
+attribute = 5
+improvement = 1.0
+cost = 3000
+level_requirement = 10
 metadata/_custom_type_script = "uid://cs7k5sc862itr"
 
 [sub_resource type="Resource" id="Resource_xphq4"]
@@ -199,7 +225,7 @@ title = "stamina_up3"
 image = ExtResource("28_siy3q")
 cap = 5
 improvement = 1.0
-cost = 500
+cost = 1500
 level_requirement = 12
 metadata/_custom_type_script = "uid://cs7k5sc862itr"
 
@@ -214,13 +240,35 @@ cost = 1500
 level_requirement = 13
 metadata/_custom_type_script = "uid://cs7k5sc862itr"
 
+[sub_resource type="Resource" id="Resource_lagmg"]
+script = ExtResource("27_ttcv8")
+title = "legendary_chance_up"
+image = ExtResource("42_o3r0c")
+cap = 2
+attribute = 6
+improvement = 1.0
+cost = 10000
+level_requirement = 15
+metadata/_custom_type_script = "uid://cs7k5sc862itr"
+
 [sub_resource type="Resource" id="Resource_wbxeb"]
 script = ExtResource("27_ttcv8")
 title = "stamina_up4"
 image = ExtResource("28_siy3q")
-cap = 10
+cap = 5
 improvement = 1.0
-cost = 2000
+cost = 8000
+level_requirement = 20
+metadata/_custom_type_script = "uid://cs7k5sc862itr"
+
+[sub_resource type="Resource" id="Resource_1gv2p"]
+script = ExtResource("27_ttcv8")
+title = "mythic_chance_up"
+image = ExtResource("41_eniho")
+cap = 1
+attribute = 7
+improvement = 1.0
+cost = 25000
 level_requirement = 20
 metadata/_custom_type_script = "uid://cs7k5sc862itr"
 
@@ -228,14 +276,14 @@ metadata/_custom_type_script = "uid://cs7k5sc862itr"
 script = ExtResource("27_ttcv8")
 title = "stamina_up5"
 image = ExtResource("28_siy3q")
-cap = 10
+cap = 5
 improvement = 1.0
-cost = 3500
-level_requirement = 25
+cost = 50000
+level_requirement = 30
 metadata/_custom_type_script = "uid://cs7k5sc862itr"
 
 [resource]
 script = ExtResource("2_h2d3w")
 levels = Array[ExtResource("1_8kyea")]([SubResource("Resource_vu40f"), SubResource("Resource_1h35d"), SubResource("Resource_o3r0c")])
-upgrades = Array[ExtResource("27_ttcv8")]([SubResource("Resource_kityl"), SubResource("Resource_siy3q"), SubResource("Resource_o1wax"), SubResource("Resource_xphq4"), SubResource("Resource_v7t4x"), SubResource("Resource_4wd7x"), SubResource("Resource_wbxeb"), SubResource("Resource_r78st")])
+upgrades = Array[ExtResource("27_ttcv8")]([SubResource("Resource_kityl"), SubResource("Resource_siy3q"), SubResource("Resource_eniho"), SubResource("Resource_o1wax"), SubResource("Resource_v176c"), SubResource("Resource_xphq4"), SubResource("Resource_v7t4x"), SubResource("Resource_4wd7x"), SubResource("Resource_lagmg"), SubResource("Resource_wbxeb"), SubResource("Resource_1gv2p"), SubResource("Resource_r78st")])
 metadata/_custom_type_script = "uid://ck7xbm8va0wlh"

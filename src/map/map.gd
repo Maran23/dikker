@@ -27,7 +27,7 @@ func _ready() -> void:
 func generate_level_map() -> LevelMap:
 	var level_map: LevelMap = LevelMap.new()
 	level_map.level = Game.level
-	level_map.is_night = Utils.random_chance_1_100(40)
-	level_map.is_fog = Utils.random_chance_1_100(20)
+	level_map.is_night = Utils.random_chance_1_100(Player.night_chance)
+	level_map.is_fog = Utils.random_chance_1_100(Player.fog_chance)
 
 	return level_map

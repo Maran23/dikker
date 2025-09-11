@@ -57,21 +57,35 @@ text = "Increase Stamina"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
-[node name="BaseLbl" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="BaseLbl" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "5"
 
-[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = ">"
 
-[node name="ImprovementLbl" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="ImprovementLbl" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(0.517647, 0.788235, 0.466667, 1)
 text = "6"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CurrentValueLbl" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9254902, 0.43529412, 0, 1)
+text = "(21)"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2

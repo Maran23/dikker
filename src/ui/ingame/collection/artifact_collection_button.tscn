@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvfw5v3x1qvdf"]
 
-[ext_resource type="Texture2D" uid="uid://dqpbl8qggjqqx" path="res://assets/map/artifact/ammonit.webp" id="1_6nmu5"]
 [ext_resource type="ButtonGroup" uid="uid://bwecwbtyhem7m" path="res://src/ui/component/button_group.tres" id="1_f1y1y"]
 [ext_resource type="Script" uid="uid://bo0c0clihpl7y" path="res://src/ui/ingame/collection/artifact_collection_button.gd" id="1_gg5ja"]
+[ext_resource type="Texture2D" uid="uid://blxevfy314vt0" path="res://assets/map/artifact/shield_lion.webp" id="3_f1y1y"]
 
 [node name="ArtifactCollectionButton" type="Button"]
 custom_minimum_size = Vector2(288, 288)
@@ -35,7 +35,7 @@ theme_override_constants/separation = 5
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("1_6nmu5")
+texture = ExtResource("3_f1y1y")
 stretch_mode = 3
 
 [node name="CountLbl" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -51,4 +51,5 @@ custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 text = "fire oder so knife oder so"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3

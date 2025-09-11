@@ -9,7 +9,7 @@ var count: int
 
 func _ready() -> void:
 	image_rect.texture = artifact.image
-	count_lbl.text = Utils.fi(count) + "x"
+	count_lbl.text = Utils.fi_down(count) + "x"
 	name_lbl.text = artifact.name
 
 func set_artifact_count(new_artifact: ArtifactInfo, new_count: int):

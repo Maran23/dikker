@@ -35,7 +35,7 @@ func update_stamina():
 
 func update_xp():
 	var next_xp: int = Player.calculate_next_level_xp()
-	level_xp_container.set_xp(Player.xp, next_xp)
+	level_xp_container.set_xp_and_text(Player.xp, next_xp)
 
 func update_level():
 	level_xp_container.set_level(Player.level)

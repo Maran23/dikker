@@ -12,4 +12,4 @@ func _ready() -> void:
 	image_rect.texture = image
 
 func set_value(value: int):
-	value_lbl.text = Utils.fi(value)
+	value_lbl.text = Utils.fi_down(value)
