@@ -11,7 +11,7 @@ enum Rarity {
 
 static var rarity_color: Dictionary[Rarity, Color] = {
 	Rarity.NORMAL: Color.WHITE,
-	Rarity.RARE: Color.html("#5440ff"),
+	Rarity.RARE: Color.html("#00dbff"),
 	Rarity.EPIC: Color.html("#e23cff"),
 	Rarity.LEGENDARY: Color.html("#ffcb00"),
 	Rarity.MYTHIC: Color.html("#ff3c3c")
