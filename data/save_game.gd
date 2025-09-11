@@ -16,9 +16,6 @@ const PATH: String = "user://dikker.tres"
 static var current_save_game: SaveGame
 
 static func load_save_game():
-	if (!ResourceLoader.exists(PATH)):
-		return
-
 	var save_game: SaveGame = ResourceLoader.load(PATH, "", ResourceLoader.CACHE_MODE_IGNORE)
 	if (save_game == null):
 		save_game = SaveGame.new()

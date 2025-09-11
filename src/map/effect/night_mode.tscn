@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bosnwl6eedbpa"]
+
+[ext_resource type="Texture2D" uid="uid://d1kmn3ecav6tl" path="res://assets/map/effect/point_light.webp" id="1_b11b6"]
+[ext_resource type="Script" uid="uid://cp4tfraqupyp1" path="res://src/map/effect/night_mode.gd" id="1_veukm"]
+
+[node name="NightMode" type="CanvasModulate"]
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_veukm")
+
+[node name="PointLight" type="PointLight2D" parent="."]
+position = Vector2(960, 540)
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("1_b11b6")
+texture_scale = 4.0

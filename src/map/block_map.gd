@@ -44,7 +44,7 @@ func generate_artifact() -> Artifact:
 	var artifact_item: ArtifactItem = Player.get_artifact_item(artifact_info, rarity)
 	artifact.item = artifact_item
 
-	artifact.material = Game.get_rarity_shader_material(rarity)
+	artifact.material = ArtifactItem.get_rarity_shader_material(rarity)
 
 	return artifact
 

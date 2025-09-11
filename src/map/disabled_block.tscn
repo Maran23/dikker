@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://hqm8wjckpafd" path="res://assets/map/level/dirt/block/dirt1.webp" id="1_thrf5"]
 
-[node name="DisabledBlock" type="Sprite2D"]
+[node name="BlockBackground" type="Sprite2D"]
 self_modulate = Color(0.34375, 0.34375, 0.34375, 1)
 texture = ExtResource("1_thrf5")
 centered = false

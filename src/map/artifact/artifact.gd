@@ -40,7 +40,7 @@ func cover_up():
 
 	if (item.is_special()):
 		var special_stars: GPUParticles2D = create_stars_particles()
-		special_stars.self_modulate = Game.get_rarity_color(item.rarity)
+		special_stars.self_modulate = ArtifactItem.get_rarity_color(item.rarity)
 		add_child(special_stars)
 
 func create_stars_particles() -> GPUParticles2D:

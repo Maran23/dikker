@@ -27,9 +27,9 @@ var prev_value: int
 
 func _ready() -> void:
 	image_rect.texture = artifact.info.image
-	image_rect.material = Game.get_rarity_shader_material(artifact.rarity)
+	image_rect.material = ArtifactItem.get_rarity_shader_material(artifact.rarity)
 	name_lbl.text = artifact.info.name
-	name_lbl.add_theme_color_override(&"font_color", Game.get_rarity_color(artifact.rarity))
+	name_lbl.add_theme_color_override(&"font_color", ArtifactItem.get_rarity_color(artifact.rarity))
 
 	count_lbl.text = Utils.fi(artifact.count) + "x"
 	level_lbl.text = Utils.fi(artifact.stats.level)
@@ -45,7 +45,7 @@ func _ready() -> void:
 
 	var gained_xp: int
 	if (level_up):
-		gained_xp = artifact.stats.xp + prev_level_up_xp - prev_xp
+		gained_xp = artifact.stats.xp + (prev_level_up_xp - prev_xp)
 	else:
 		gained_xp = artifact.stats.xp - prev_xp
 
@@ -84,6 +84,8 @@ func update_level_xp(start_xp: int):
 	if (artifact.stats.xp == start_xp):
 		update_xp_label()
 		return
+
+	xp_lbl.text = "+" + Utils.fi(artifact.stats.xp - start_xp)
 
 	var tween: Tween = create_tween()
 	tween.tween_property(xp_bar, ^"value", artifact.stats.xp, 1)

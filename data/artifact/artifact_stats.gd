@@ -23,4 +23,5 @@ func calculate_next_level_xp(level_up_xp: int) -> int:
 
 	var additional_increase: float = pow(ADDITIONAL_MULTIPLIER, level)
 	var level_increase: float = INCREASE_RATE * (level - 1)
-	return level_up_xp + level_increase + additional_increase
+	var result: float = level_up_xp + level_increase + additional_increase
+	return result as int

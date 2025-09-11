@@ -24,8 +24,8 @@ var xp: int : set = set_xp
 var coins: int : set = set_coins
 var gems: int : set = set_gems
 
-var artifacts: Array[ArtifactItem] = []
-var upgrades: Array[UpgradeItem] = []
+var artifacts: Array[ArtifactItem]
+var upgrades: Array[UpgradeItem]
 
 var stamina: int = DEF_STAMINA : set = set_stamina
 var damage: int = DEF_DAMAGE : set = set_damage
@@ -136,7 +136,8 @@ func calculate_next_level_xp() -> int:
 
 	var additional_increase: float = pow(XP_IMPROVEMENT, level - 5)
 	var level_increase: float = LEVEL_XP * (level - 1)
-	return (LEVEL_XP + level_increase) * additional_increase
+	var result: float = (LEVEL_XP + level_increase) * additional_increase
+	return result as int
 
 func apply_stats():
 	stamina = DEF_STAMINA
@@ -147,9 +148,9 @@ func apply_stats():
 
 		match (upgrade_item.upgrade.attribute):
 			Upgrade.Attribute.STAMINA:
-				stamina += improvement
+				stamina += improvement as int
 			Upgrade.Attribute.DAMAGE:
-				damage += improvement
+				damage += improvement as int
 
 func calc_additive(upgrade_item: UpgradeItem) -> float:
 	return upgrade_item.count * upgrade_item.upgrade.improvement

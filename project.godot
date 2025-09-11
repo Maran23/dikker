@@ -13,14 +13,13 @@ config_version=5
 config/name="Dikker"
 config/tags=PackedStringArray("project")
 run/main_scene="uid://bgobkdf567vqd"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Game="*res://src/game.tscn"
 Player="*res://src/player/player.tscn"
-Utils="*res://src/utils/utils.gd"
 
 [display]
 
@@ -45,10 +44,10 @@ folder_colors={
 
 [gui]
 
-theme/custom="uid://dxmrs1ky0io2i"
 theme/default_font_antialiasing=0
 theme/default_font_hinting=0
 theme/default_font_multichannel_signed_distance_field=true
+theme/custom="uid://dxmrs1ky0io2i"
 
 [input]
 

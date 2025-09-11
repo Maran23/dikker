@@ -1,9 +1,9 @@
 extends Node
 
-const SHINE: Shader = preload("res://src/map/artifact/shine.gdshader")
-
 var GREEN: Color = Color.html("#84c977")
 var RED: Color = Color.html("#d74343")
+
+const FOG_MATERIAL: ShaderMaterial = preload("res://src/map/effect/fog_material.tres")
 
 signal level_started
 signal level_finished
@@ -23,6 +23,12 @@ var artifacts: Array[ArtifactItem] = []
 var is_completed: bool
 
 var stamina: int : set = set_stamina
+
+func _ready() -> void:
+	# Generate random fog
+	var noise_texture: NoiseTexture2D = FOG_MATERIAL.get_shader_parameter("noise_texture")
+	var noise: FastNoiseLite = noise_texture.noise
+	noise.seed = Utils.ri()
 
 func set_stamina(new_stamina: int):
 	stamina = max(new_stamina, 0)
@@ -84,34 +90,3 @@ func complete_level():
 
 func finish_level():
 	level_finished.emit()
-
-func get_rarity_shader_material(rarity: ArtifactItem.Rarity) -> ShaderMaterial:
-	if (rarity == ArtifactItem.Rarity.NORMAL):
-		return null
-
-	var material: ShaderMaterial = ShaderMaterial.new()
-	material.shader = SHINE
-
-	var color: Color = get_rarity_color(rarity)
-	color.a = 0.4
-
-	material.set_shader_parameter(&"shine_color", color)
-
-	return material
-
-func get_rarity_color(rarity: ArtifactItem.Rarity) -> Color:
-	if (rarity == ArtifactItem.Rarity.NORMAL):
-		return Color.WHITE
-
-	var color: Color
-	match (rarity):
-		ArtifactItem.Rarity.RARE:
-			color = Color.html("#5440ff")
-		ArtifactItem.Rarity.EPIC:
-			color = Color.html("#e23cff")
-		ArtifactItem.Rarity.LEGENDARY:
-			color = Color.html("#ffcb00")
-		ArtifactItem.Rarity.MYTHIC:
-			color = Color.html("#ff3c3c")
-
-	return color

@@ -35,7 +35,6 @@ func on_menu_visible():
 	Player.xp += gained_xp
 
 	level_xp_container.set_level(Player.level)
-	level_xp_container.set_xp(Player.xp, next_level_xp)
 	level_xp_container.set_xp_label("+" + Utils.fi(gained_xp))
 
 	if (Player.level > prev_level):
@@ -101,8 +100,9 @@ func update_level():
 	level_xp_container.set_xp(0, next_level_xp)
 
 	if (Player.xp == 0):
-		update_xp_label()
 		return
+
+	level_xp_container.set_xp_label(Utils.fi(Player.xp))
 
 	var tween: Tween = create_tween()
 	tween.tween_property(level_xp_container.xp_bar, ^"value", Player.xp, 1)

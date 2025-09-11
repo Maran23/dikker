@@ -81,9 +81,9 @@ func update_details(btn: InventoryButton):
 	current_artifact = btn.artifact
 
 	image_rect.texture = current_artifact.info.image
-	image_rect.material = Game.get_rarity_shader_material(current_artifact.rarity)
+	image_rect.material = ArtifactItem.get_rarity_shader_material(current_artifact.rarity)
 	title_lbl.text = current_artifact.info.name
-	title_lbl.add_theme_color_override(&"font_color", Game.get_rarity_color(current_artifact.rarity))
+	title_lbl.add_theme_color_override(&"font_color", ArtifactItem.get_rarity_color(current_artifact.rarity))
 
 	level_xp_container.set_level(current_artifact.stats.level)
 	var next_level_xp: int = current_artifact.calculate_next_level_xp()

@@ -10,9 +10,10 @@ func calculate_next_cost() -> int:
 
 	var additional_mult: float = 1
 	if (count >= 5):
-		additional_mult =  log(count) / log(5)
+		additional_mult = log(count) / log(5)
 
-	return (upgrade.cost + int(count * upgrade.cost)) * additional_mult
+	var result: float = (upgrade.cost + int(count * upgrade.cost)) * additional_mult
+	return result as int
 
 func is_maxed() -> bool:
 	return count == upgrade.cap
